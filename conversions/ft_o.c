@@ -1,6 +1,6 @@
 #include "../ft_printf.h"
 
-int		ft_o(char **str) /* not sure, need to research */ 
+int		ft_o(char **str) /* Type octal Integer */ 
 {
 	return (0);
 }

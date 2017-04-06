@@ -1,6 +1,6 @@
 #include "../ft_printf.h"
 
-int		ft_s(char **str) /* not sure, need to research */ 
+int		ft_s(char **str) /* type string */ 
 {
 	return (0);
 }
