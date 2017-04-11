@@ -15,17 +15,14 @@
 int		ft_cd_freq(const char *str, char c)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	if (*str != c && *str != '\0')
 		i++;
 	while (*str)
 	{
 		if (*str == c)
 		{
-			j = 1;
 			if (*(str + 1) != c)
 				if (*(str + 1) != '\0')
 					i++;

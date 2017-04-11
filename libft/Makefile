@@ -26,7 +26,7 @@ SRCS = ft_strcmp.c ft_atoi.c ft_isdigit.c ft_isalpha.c ft_isalnum.c \
 	   ft_memalloc.c ft_strlcat.c ft_strlen.c ft_int_len.c ft_wspace_check.c \
 	   ft_until.c ft_cd_freq.c ft_strrev.c ft_lstnew.c ft_lstdelone.c \
 	   ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_print_list.c \
-	   ft_lstsize.c get_next_line.c
+	   ft_lstsize.c get_next_line.c ft_char_count.c
 
 OBJS = ft_strcmp.o ft_atoi.o ft_isdigit.o ft_isalpha.o ft_isalnum.o \
 	   ft_isascii.o ft_isprint.o ft_putchar.o ft_putstr.o ft_putendl.o \
@@ -41,7 +41,7 @@ OBJS = ft_strcmp.o ft_atoi.o ft_isdigit.o ft_isalpha.o ft_isalnum.o \
 	   ft_memalloc.o ft_strlcat.o ft_strlen.o ft_int_len.o ft_wspace_check.o \
 	   ft_until.o ft_cd_freq.o ft_strrev.o ft_lstnew.o ft_lstdelone.o \
 	   ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_print_list.o \
-	   ft_lstsize.o get_next_line.o
+	   ft_lstsize.o get_next_line.o ft_char_count.o
 
 all: $(NAME)
 
