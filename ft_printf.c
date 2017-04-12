@@ -1,17 +1,17 @@
 #include "ft_printf.h"
 
-int 	main(int argc, char **argv)
-{
-	if (argc != 2)
-	{
-		ft_putstr("Only enter one argument, dumbass.");
-	}
-	else
-	{
-		ft_printf(argv[1], "%s");
-	}
-	return (0);
-}
+// int 	main(int argc, char **argv)
+// {
+// 	if (argc != 3)
+// 	{
+// 		ft_putstr("Only enter two arguments, dumbass.");
+// 	}
+// 	else
+// 	{
+// 		ft_printf(argv[1], argv[2]);
+// 	}
+// 	return (0);
+// }
 
 int		ft_printf(const char *input, ...)
 {
@@ -19,7 +19,9 @@ int		ft_printf(const char *input, ...)
 	int 		i;
 	char 		*str;
 
-	i = ft_char_count((char *)input, '%') + 1;
+	i = ft_char_count((char *)input, '%');
+	if (i == 0)
+		i++;
 	str = ft_strdup(input);
 	va_start(ap, input);
 	// tic = va_arg(ap, char *);
@@ -35,7 +37,7 @@ int		ft_printf(const char *input, ...)
 		if (ft_next_arg(ap, &str, i))
 			i--;
 		else
-			return (-1);
+			break ;
 	}
 	// ft_putstr(va_arg);
 	// while (i > 0)
@@ -43,5 +45,6 @@ int		ft_printf(const char *input, ...)
 	// 	// type = ft_strdup("char*");
 	// 	tic = va_arg(ap, type);
 	// }
+	ft_putstr(str);
 	return (0);
 }
