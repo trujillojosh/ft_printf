@@ -22,13 +22,19 @@ static char	ft_find_type(char **str)
 	while ((*s1 != '%') && (*s1 != '\0'))
 		s1++;
 	if (*s1 == '%')
+	{
 		s1++;
+		if (*s1 == ' ')
+			return (ft_find_type(&s1));
+	}
+	// if (*s1 == '%')
+	// 	return (ft_find_type(&s1));
 	// if ((*(s1 + 1) != ' ') && (*(s1 + 1) != '\0'))
 	// {
 	// 	return ('\0');
 	// }
 	// else
-		return (*s1);
+	return (*s1);
 	// if (*s1 == '\0') //handles no percents
 	// {
 	// 	return (c);
@@ -53,7 +59,9 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 		return (ft_d(ap, str));
 	else if (c == 'c')
 		return (ft_c(ap, str));
-	return (0);
+	else if (c == '%')
+		return (ft_percent(str));
+	return (-1);
 }
 
 int			ft_next_arg(va_list ap, char **str, int i)

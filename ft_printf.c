@@ -1,15 +1,9 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 int 	main(int argc, char **argv)
 {
-	// if (argc != 3)
-	// {
-	// 	ft_putstr("Only enter two arguments, dumbass.");
-	// }
-	// else
-	// {
-		ft_printf("Hello, %s, %cesting %d%i", "World", 't', ft_atoi("-9"), ft_atoi("0"));
-	// }
+	ft_printf("Hello, percent %% %s, %cesting %d%i", "World", 't', ft_atoi("-9"), ft_atoi("0"));
 	return (0);
 }
 
@@ -24,14 +18,6 @@ int		ft_printf(const char *input, ...)
 		i++;
 	str = ft_strdup(input);
 	va_start(ap, input);
-	// tic = va_arg(ap, char *);
-	// ft_putendl(tic);
-	// tic = va_arg(ap, char *);
-	// ft_putendl(tic);
-	// ft_putstr(input);
-	// va_end(ap);
-	// ft_putnbr(i);
-	// tic = va_arg(ap, ft_arg_type(input, i));
 	while (i > 0)
 	{
 		if (ft_next_arg(ap, &str, i) >= 0)
@@ -39,13 +25,7 @@ int		ft_printf(const char *input, ...)
 		else
 			break ;
 	}
-	// ft_putstr(va_arg);
-	// while (i > 0)
-	// {
-	// 	// type = ft_strdup("char*");
-	// 	tic = va_arg(ap, type);
-	// }
-	ft_putstr(str);
+	ft_putstr(ft_strinsert("", "", 2));
 	va_end(ap);
 	return (0);
 }
