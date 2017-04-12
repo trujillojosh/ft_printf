@@ -1,17 +1,17 @@
 #include "ft_printf.h"
 
-// int 	main(int argc, char **argv)
-// {
-// 	if (argc != 3)
-// 	{
-// 		ft_putstr("Only enter two arguments, dumbass.");
-// 	}
-// 	else
-// 	{
-// 		ft_printf(argv[1], argv[2]);
-// 	}
-// 	return (0);
-// }
+int 	main(int argc, char **argv)
+{
+	if (argc != 3)
+	{
+		ft_putstr("Only enter two arguments, dumbass.");
+	}
+	else
+	{
+		ft_printf(argv[1], argv[2]);
+	}
+	return (0);
+}
 
 int		ft_printf(const char *input, ...)
 {

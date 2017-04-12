@@ -1,6 +1,6 @@
 NAME = ft_printf
 INC = -I ft_printf.h
-FLAGS = gcc -c
+FLAGS = gcc
 #-Wall -Wextra -Werror#
 
 SRCS = ft_printf.c conversions/ft_up_c.c conversions/ft_up_d.c conversions/ft_up_o.c \
@@ -11,23 +11,18 @@ SRCS = ft_printf.c conversions/ft_up_c.c conversions/ft_up_d.c conversions/ft_up
 	   flags/ft_j.c flags/ft_l.c flags/ft_ll.c flags/ft_space.c flags/ft_z.c conversions/ft_percent.c \
 	   ft_next_arg.c ft_strinsert.c
 
-OBJS = *.o
-
 all: $(NAME)
 
 $(NAME):
 	@make all -C libft
-	#$(FLAGS) $(INC) -o $(NAME) $(SRCS) -L libft/ -lft -g#
-	$(FLAGS) $(SRCS) -I $(INC)
-	ar rc libftprintf.a $(OBJS)
+	$(FLAGS) $(INC) -o $(NAME) $(SRCS) -L libft/ -lft -g
 
 clean:
 	@make clean -C libft
-	@rm -rf $(OBJS)
+	@rm -rf
 
 fclean: clean
 	@make fclean -C libft
 	rm -rf $(NAME)
-	rm -rf libftprintf.a
 
 re: fclean all
