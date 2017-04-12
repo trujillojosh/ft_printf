@@ -23,11 +23,11 @@ static char	ft_find_type(char **str)
 		s1++;
 	if (*s1 == '%')
 		s1++;
-	if ((*(s1 + 1) != ' ') && (*(s1 + 1) != '\0'))
-	{
-		return ('\0');
-	}
-	else
+	// if ((*(s1 + 1) != ' ') && (*(s1 + 1) != '\0'))
+	// {
+	// 	return ('\0');
+	// }
+	// else
 		return (*s1);
 	// if (*s1 == '\0') //handles no percents
 	// {
@@ -48,7 +48,11 @@ static char	ft_find_type(char **str)
 static int 	ft_dispatch(va_list ap, char c, char **str)
 {
 	if (c == 's')
-		return(ft_s(ap, str));
+		return (ft_s(ap, str));
+	else if ((c == 'd') || (c == 'i'))
+		return (ft_d(ap, str));
+	else if (c == 'c')
+		return (ft_c(ap, str));
 	return (0);
 }
 

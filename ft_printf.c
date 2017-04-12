@@ -2,14 +2,14 @@
 
 int 	main(int argc, char **argv)
 {
-	if (argc != 3)
-	{
-		ft_putstr("Only enter two arguments, dumbass.");
-	}
-	else
-	{
-		ft_printf(argv[1], argv[2]);
-	}
+	// if (argc != 3)
+	// {
+	// 	ft_putstr("Only enter two arguments, dumbass.");
+	// }
+	// else
+	// {
+		ft_printf("Hello, %s, %cesting %d%i", "World", 't', ft_atoi("-9"), ft_atoi("0"));
+	// }
 	return (0);
 }
 
@@ -34,7 +34,7 @@ int		ft_printf(const char *input, ...)
 	// tic = va_arg(ap, ft_arg_type(input, i));
 	while (i > 0)
 	{
-		if (ft_next_arg(ap, &str, i))
+		if (ft_next_arg(ap, &str, i) >= 0)
 			i--;
 		else
 			break ;
@@ -46,5 +46,6 @@ int		ft_printf(const char *input, ...)
 	// 	tic = va_arg(ap, type);
 	// }
 	ft_putstr(str);
+	va_end(ap);
 	return (0);
 }

@@ -25,10 +25,10 @@ char	*ft_strinsert(char *s1, char *s2)
 		res[i++] = *s1++;
 	while (*s2 != '\0')
 		res[i++] = *s2++;
+	s1++;
+	s1++;
 	while (*s1 != '\0')
 	{
-		while ((*s1 != ' ') && (*s1 != '\0'))
-			s1++;
 		res[i] = *s1;
 		i++;
 		s1++;
