@@ -63,9 +63,9 @@ int			ft_next_arg(va_list ap, char **str, int i)
 			return (-1);
 		// ft_putchar(type);
 	}
-	else
-	{
-		ft_putstr("no type");
-	}
+	// else
+	// {
+	// 	ft_putstr("no type");
+	// }
 	return (0);
 }
