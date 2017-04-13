@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 09:42:58 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/03/19 17:27:53 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/04/12 18:11:32 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ void				ft_print_list(t_list *lst);
 int					ft_lstsize(t_list *lst);
 int					get_next_line(const int fd, char **line);
 int					ft_char_count(char *str, char c);
+void				ft_print_hex(int nb);
 
 #endif

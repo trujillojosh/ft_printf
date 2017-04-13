@@ -26,7 +26,7 @@ int		ft_up_x(char **s1);
 int		ft_c(va_list ap, char **s1);
 int		ft_d(va_list ap, char **s1);
 int		ft_o(char **s1);
-int		ft_p(char **s1);
+int		ft_p(va_list ap, char **s1);
 int		ft_s(va_list ap, char **s1);
 int		ft_u(char **s1);
 int		ft_x(char **s1);

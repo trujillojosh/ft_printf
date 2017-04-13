@@ -61,6 +61,8 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 		return (ft_c(ap, str));
 	else if (c == '%')
 		return (ft_percent(str));
+	else if (c == 'p')
+		return (ft_p(ap, str));
 	return (-1);
 }
 
