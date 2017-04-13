@@ -18,7 +18,10 @@ int 	main(int argc, char **argv)
 	char a = 'c';
 
 	char *b = &a;
-	ft_printf("Hello, percent %% %s, %cesting %d%i\n%p", "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
+	//char str[6] = "hello";
+	int k = 1;
+	printf("%0*d", 3, k); 
+//	ft_printf("Hello, percent %% %s, %cesting %d%i\n%p", "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
 	return (0);
 }
 

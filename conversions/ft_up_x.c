@@ -12,7 +12,7 @@
 
 #include "../ft_printf.h"
 
-int		ft_up_x(char **s1) /* not sure, need to research */ 
+int		ft_up_x(char **s1) /* Unsigned hexadecimal integer (uppercase) */ 
 {
 	return (0);
 }
