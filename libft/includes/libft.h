@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 09:42:58 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 18:11:32 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/04/12 22:27:20 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,7 @@ int					ft_lstsize(t_list *lst);
 int					get_next_line(const int fd, char **line);
 int					ft_char_count(char *str, char c);
 void				ft_print_hex(int nb);
+char				*ft_itoa_base(int value, int base);
+int					ft_int_len_ext(int nb, int base);
 
 #endif
