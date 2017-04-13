@@ -3,14 +3,10 @@
 
 int 	main(int argc, char **argv)
 {
-	int 	a = 1084919;
+	char a = 'c';
 
-	int 	*b = &a;
-	// ft_putstr((char *)&b);
-	// ft_print_hex(*b);
-	printf("%p\n", b);
-	ft_printf("%p", b);
-	// ft_printf("Hello, percent %% %s, %cesting %d%i", "World", 't', ft_atoi("-9"), ft_atoi("0"));
+	char *b = &a;
+	ft_printf("Hello, percent %% %s, %cesting %d%i\n%p", "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
 	return (0);
 }
 
