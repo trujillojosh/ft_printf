@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_u.c                                             :+:      :+:    :+:   */
+/*   ft_uint_len_ext.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 22:59:24 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 22:59:38 by jtrujill         ###   ########.fr       */
+/*   Created: 2017/04/13 18:28:28 by jtrujill          #+#    #+#             */
+/*   Updated: 2017/04/13 18:31:54 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "includes/libft.h"
 
-int		ft_u(va_list ap, char **s1) /* type unsigned int */ 
+int		ft_uint_len_ext(unsigned int nb, int base)
 {
-	unsigned int 	res;
+	int	i;
 
-	res = va_arg(ap, unsigned int);
-	*s1 = ft_strinsert(*s1, ft_uitoa_base(res, 10), 1);
-	return (0);
+	i = 0;
+	while ((nb / base) != 0)
+	{
+		i++;
+		nb = nb / base;
+	}
+	i++;
+	return (i);
 }

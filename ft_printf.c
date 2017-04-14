@@ -11,17 +11,16 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int 	main(int argc, char **argv)
 {
-	char a = 'c';
+	int 	c = -112698918;
+	unsigned int d = (unsigned int)c;
+	int a = -62;
 
-	char *b = &a;
-	//char str[6] = "hello";
-	int k = 1;
-	printf("%0*d", 3, k); 
-//	ft_printf("Hello, percent %% %s, %cesting %d%i\n%p", "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
+	int *b = &a;
+	printf("This is a test % d", a);
+	// ft_printf("%o Hello, percent %% %s, %cesting %d%i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
 	return (0);
 }
 

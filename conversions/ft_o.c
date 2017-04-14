@@ -12,7 +12,11 @@
 
 #include "../ft_printf.h"
 
-int		ft_o(char **s1) /* Type octal Integer */ 
+int		ft_o(va_list ap, char **s1) /* Type octal Integer */ 
 {
+	unsigned int 	res;
+
+	res = va_arg(ap, unsigned int);
+	*s1 = ft_strinsert(*s1, ft_uitoa_base(res, 8), 1);
 	return (0);
 }

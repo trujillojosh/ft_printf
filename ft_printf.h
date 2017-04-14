@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include "libft/includes/libft.h"
+# include <stdio.h> //take this shit out before submitting
 
 int		ft_printf(const char *input, ...);
 int		ft_plus(char **s1);
@@ -34,14 +35,14 @@ int		ft_up_d(char **s1);
 int		ft_up_o(char **s1);
 int		ft_up_s(char **s1);
 int		ft_up_u(char **s1);
-int		ft_up_x(char **s1);
+int		ft_up_x(va_list ap, char **s1);
 int		ft_c(va_list ap, char **s1);
 int		ft_d(va_list ap, char **s1);
-int		ft_o(char **s1);
+int		ft_o(va_list ap, char **s1);
 int		ft_p(va_list ap, char **s1);
 int		ft_s(va_list ap, char **s1);
-int		ft_u(char **s1);
-int		ft_x(char **s1);
+int		ft_u(va_list ap, char **s1);
+int		ft_x(va_list ap, char **s1);
 int 	ft_percent(char **s1);
 
 int		ft_next_arg(va_list ap, char **str, int i);

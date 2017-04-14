@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 23:01:51 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:01:54 by jtrujill         ###   ########.fr       */
+/*   Created: 2017/04/13 20:47:31 by jtrujill          #+#    #+#             */
+/*   Updated: 2017/04/13 20:47:38 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_hh(char **s1) /* idk this shit, lookup later */
+int		ft_hh(char **s1) /* not sure, need to research */ 
 {
 	return (0);
 }

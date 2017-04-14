@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_x.c                                             :+:      :+:    :+:   */
+/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 23:01:10 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:01:12 by jtrujill         ###   ########.fr       */
+/*   Created: 2017/04/13 16:46:28 by jtrujill          #+#    #+#             */
+/*   Updated: 2017/04/13 18:34:16 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "includes/libft.h"
 
-int		ft_x(va_list ap, char **s1) /* Unsigned hexadecimal integer */ 
+char		*ft_uitoa_base(unsigned int value, int base)
 {
-	unsigned int 	res;
-	char 			*tmp;
-	int 			i;
+	int		i;
+	char	*re;
 
-	i = 0;
-	res = va_arg(ap, unsigned int);
-	tmp = ft_uitoa_base(res, 16);
-	while (tmp[i] != '\0')
+	i = 1;
+	//if (base == 10)
+	//	return (ft_itoa(value));
+	i = ft_uint_len_ext(value, base);
+	re = (char *)malloc(sizeof(char) * (i + 1));
+	re[i] = '\0';
+	i--;
+	while (i >= 0)
 	{
-		tmp[i] = ft_tolower(tmp[i]);
-		i++;
+		if ((value % base) > 9)
+			re[i] = (value % base) + 55;
+		else
+			re[i] = (value % base) + 48;
+		value = value / base;
+		i--;
 	}
-	*s1 = ft_strinsert(*s1, tmp, 1);
-	ft_strdel(&tmp);
-	return (0);
+	return (re);
 }
