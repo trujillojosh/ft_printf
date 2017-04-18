@@ -19,7 +19,7 @@ int 	main(int argc, char **argv)
 	int a = -62;
 
 	int *b = &a;
-	printf("This is a test % d", a);
+	ft_printf("This is a test %d", a);
 	// ft_printf("%o Hello, percent %% %s, %cesting %d%i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
 	return (0);
 }
