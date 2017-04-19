@@ -13,6 +13,7 @@
 #include "../ft_printf.h"
 
 /* type decimal signed int, i conversion is same as d */ 
+
 int		ft_d(va_list ap, char **s1)
 {
 	char	*digit;

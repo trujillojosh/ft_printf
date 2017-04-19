@@ -12,24 +12,6 @@
 
 #include "ft_printf.h"
 
-// static char	ft_find_type(char **str)
-// {
-// 	char	*s1;
-// 	char 	c;
-
-// 	s1 = ft_strdup(*str);
-// 	c = 0;
-// 	while ((*s1 != '%') && (*s1 != '\0'))
-// 		s1++;
-// 	if (*s1 == '%')
-// 	{
-// 		s1++;
-// 		if (*s1 == ' ')
-// 			return (ft_find_type(&s1));
-// 	}
-// 	return (*s1);
-// }
-
 static char 	*ft_find_type(char *str)
 {
 	int 	i;
@@ -90,20 +72,11 @@ int			ft_next_arg(va_list ap, char **str, int i)
 	char	*type;
 	
 	type = ft_find_type(*str);
-	if (type)
+	if (ft_flags(ap, type, str) < 0)
 	{
-		if (ft_flags(ap, type, str) < 0)
-		{
-			ft_strdel(&type);
-			return (-1);
-		}
-		// ft_putchar(type);
-	}
-	// else
-	// {
-	// 	ft_putstr("no type");
-	// }
-	if (type)
 		ft_strdel(&type);
+		return (-1);
+	}
+	ft_strdel(&type);
 	return (0);
 }
