@@ -14,13 +14,16 @@
 
 int 	main(int argc, char **argv)
 {
-	int 	c = -112698918;
+	int 	c = 112698918;
 	unsigned int d = (unsigned int)c;
-	int a = -62;
+	int a = 120;
 
 	int *b = &a;
-	ft_printf("This is a test %d", a);
-	// ft_printf("%o Hello, percent %% %s, %cesting %d%i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
+	// printf("This is a test %o", a);
+	// ft_printf("%s", "Hello");
+	ft_printf("%o Hello, percent %% %s, %cesting %d%i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
+	// printf("%i\n%p", ft_atoi("123"), b);
+	// ft_printf("% - 0    s", "Hello");
 	return (0);
 }
 
@@ -30,7 +33,7 @@ int		ft_printf(const char *input, ...)
 	int 		i;
 	char 		*str;
 
-	i = ft_char_count((char *)input, '%');
+	i = ft_char_count((char *)input, '%') - 1;
 	if (i == 0)
 		i++;
 	str = ft_strdup(input);

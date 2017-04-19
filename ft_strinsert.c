@@ -14,45 +14,22 @@
 
 /* Searches for percent sign within s1, and inserts s2 between two words */
 
-// char	*ft_strinsert(char *s1, char *s2)
-// {
-// 	char	*res;
-// 	int		i;
-	
-// 	i = 0;
-// 	res = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) - 2));
-// 	while (*s1 != '%')
-// 		res[i++] = *s1++;
-// 	while (*s2 != '\0')
-// 		res[i++] = *s2++;
-// 	s1++;
-// 	s1++;
-// 	while (*s1 != '\0')
-// 	{
-// 		res[i] = *s1;
-// 		i++;
-// 		s1++;
-// 	}
-// 	res[i] = '\0';
-// 	return (res);
-// }
-
-char	*ft_strinsert(char *s1, char *s2, int mode)
+char		*ft_strinsert(char *s1, char *s2, int mode)
 {
 	static char 	*str;
 	char			*res;
 	int				i;
 	
 	i = 0;
-	res = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) - 2));
+	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);
 	if (mode == 2)
 		return (str);
 	while (*s1 != '%')
 		res[i++] = *s1++;
 	while (*s2 != '\0')
 		res[i++] = *s2++;
-	s1++;
-	s1++;
+	while (ft_is_over(*s1, 1))
+		s1++;
 	res[i] = '\0';
 	if (str)
 		str = ft_strjoin(str, res);

@@ -46,8 +46,9 @@ int		ft_x(va_list ap, char **s1);
 int 	ft_percent(char **s1);
 
 int		ft_next_arg(va_list ap, char **str, int i);
-static char	ft_find_type(char **str);
+static char	*ft_find_type(char *str);
 int 	main(int argc, char **argv);
 char	*ft_strinsert(char *s1, char *s2, int mode);
+int 	ft_is_over(char c, int mode);
 
 #endif

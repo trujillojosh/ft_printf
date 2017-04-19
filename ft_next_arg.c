@@ -12,43 +12,47 @@
 
 #include "ft_printf.h"
 
-static char	ft_find_type(char **str)
-{
-	char	*s1;
-	char 	c;
+// static char	ft_find_type(char **str)
+// {
+// 	char	*s1;
+// 	char 	c;
 
-	s1 = ft_strdup(*str);
-	c = 0;
-	while ((*s1 != '%') && (*s1 != '\0'))
-		s1++;
-	if (*s1 == '%')
+// 	s1 = ft_strdup(*str);
+// 	c = 0;
+// 	while ((*s1 != '%') && (*s1 != '\0'))
+// 		s1++;
+// 	if (*s1 == '%')
+// 	{
+// 		s1++;
+// 		if (*s1 == ' ')
+// 			return (ft_find_type(&s1));
+// 	}
+// 	return (*s1);
+// }
+
+static char 	*ft_find_type(char *str)
+{
+	int 	i;
+	int 	j;
+	char 	*ret;
+
+	i = 0;
+	j = 0;
+	while ((*str != '%') && (*str != '\0'))
+		str++;
+	if (*str == '%')
+		str++;
+	while(ft_is_over(str[i], 2))
+		i++;
+	ret = ft_strnew(i + 1);
+	while (j < i)
 	{
-		s1++;
-		if (*s1 == ' ')
-			return (ft_find_type(&s1));
+		ret[j] = *str;
+		j++;
+		str++;
 	}
-	// if (*s1 == '%')
-	// 	return (ft_find_type(&s1));
-	// if ((*(s1 + 1) != ' ') && (*(s1 + 1) != '\0'))
-	// {
-	// 	return ('\0');
-	// }
-	// else
-	return (*s1);
-	// if (*s1 == '\0') //handles no percents
-	// {
-	// 	return (c);
-	// }
-	// else if (*(s1 + 1) == ' ')
-	// {
-	// 	// ft_strdel(&s1);
-	// 	//c = create function to handle multiple
-	// 	return (c); //need to fix later to hold multiple
-	// }
-	// else
-	// {
-	// 	c = *s1;
-	// 	return (*s1);
+	ret[j] = '\0';
+	return (ret);
 }
 
 static int 	ft_dispatch(va_list ap, char c, char **str)
@@ -74,20 +78,32 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 	return (-1);
 }
 
+static int	ft_flags(va_list ap, char *todo, char **str)
+{
+	while (*(todo + 1) != '\0')
+		todo++;
+	return (ft_dispatch(ap, *todo, str));
+}
+
 int			ft_next_arg(va_list ap, char **str, int i)
 {
-	char	type;
+	char	*type;
 	
-	type = ft_find_type(str);
+	type = ft_find_type(*str);
 	if (type)
 	{
-		if (ft_dispatch(ap, type, str) < 0)
+		if (ft_flags(ap, type, str) < 0)
+		{
+			ft_strdel(&type);
 			return (-1);
+		}
 		// ft_putchar(type);
 	}
 	// else
 	// {
 	// 	ft_putstr("no type");
 	// }
+	if (type)
+		ft_strdel(&type);
 	return (0);
 }
