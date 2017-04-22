@@ -20,7 +20,7 @@ int 	main(int argc, char **argv)
 
 	int *b = &a;
 	// printf("This is a test %o", a);
-	// ft_printf("%s", "Hello");
+	// printf("%050d", a);
 	ft_printf("%o Hello, percent %% %s, %cesting %d%i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
 	// printf("%i\n%p", ft_atoi("123"), b);
 	// ft_printf("% - 0    s", "Hello");

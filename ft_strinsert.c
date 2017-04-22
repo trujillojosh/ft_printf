@@ -22,8 +22,12 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 	
 	i = 0;
 	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);
-	if (mode == 2)
+	if ((mode == 2) || (mode == 3))
+	{
+		if (mode == 3)
+			ft_str_replace(&str, s1);
 		return (str);
+	}
 	while (*s1 != '%')
 		res[i++] = *s1++;
 	while (*s2 != '\0')

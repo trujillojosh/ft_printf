@@ -62,9 +62,15 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 
 static int	ft_flags(va_list ap, char *todo, char **str)
 {
-	while (*(todo + 1) != '\0')
-		todo++;
-	return (ft_dispatch(ap, *todo, str));
+	int		i;
+	char	*tmp;
+
+	i = ft_strlen(ft_strinsert("", "", 2)) - 1; //i should now be starting point after conversion
+	if (ft_dispatch(ap, todo[ft_strlen(todo) - 1], str) < 0)
+		return (-1);
+	tmp = ft_strinsert("", "", 2);
+	// printf("\nThis is after ft_dispatch\n%s\n", *str);
+	return (1);
 }
 
 int			ft_next_arg(va_list ap, char **str, int i)
