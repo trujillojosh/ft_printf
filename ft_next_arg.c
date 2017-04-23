@@ -65,11 +65,12 @@ static int	ft_flags(va_list ap, char *todo, char **str)
 	int		i;
 	char	*tmp;
 
-	i = ft_strlen(ft_strinsert("", "", 2)) - 1; //i should now be starting point after conversion
+	i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if (ft_dispatch(ap, todo[ft_strlen(todo) - 1], str) < 0)
 		return (-1);
-	tmp = ft_strinsert("", "", 2);
-	// printf("\nThis is after ft_dispatch\n%s\n", *str);
+	tmp = ft_strinsert("", "", 2); //is new static variable after dispatch, i is position of last edit
+	ft_width(str, &todo, i);
+	// printf("\nThis is after ft_dispatch, i is %d\n%s\n", i, tmp);
 	return (1);
 }
 

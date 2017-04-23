@@ -17,7 +17,7 @@
 # include "libft/includes/libft.h"
 # include <stdio.h> //take this shit out before submitting
 
-int		ft_printf(const char *input, ...);
+int		ft_printf(const char *input, ...)__attribute__((format(printf,1,2)));
 int		ft_plus(char **s1);
 int		ft_minus(char **s1);
 int		ft_0(char **s1);
@@ -50,5 +50,6 @@ static char	*ft_find_type(char *str);
 int 	main(int argc, char **argv);
 char	*ft_strinsert(char *s1, char *s2, int mode);
 int 	ft_is_over(char c, int mode);
+int 	ft_width(char **str, char **todo, int start);
 
 #endif

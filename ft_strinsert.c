@@ -21,13 +21,15 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 	int				i;
 	
 	i = 0;
-	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);
+	if (!str)
+		str = ft_strnew(1);
 	if ((mode == 2) || (mode == 3))
 	{
 		if (mode == 3)
 			ft_str_replace(&str, s1);
 		return (str);
 	}
+	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);
 	while (*s1 != '%')
 		res[i++] = *s1++;
 	while (*s2 != '\0')
@@ -35,10 +37,7 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 	while (ft_is_over(*s1, 1))
 		s1++;
 	res[i] = '\0';
-	if (str)
-		str = ft_strjoin(str, res);
-	else
-		str = ft_strdup(res);
+	ft_str_replace(&str, ft_strjoin(str, res));
 	ft_strdel(&res);
 	return (s1);
 }
