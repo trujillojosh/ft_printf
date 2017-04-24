@@ -15,8 +15,11 @@
 int		ft_o(va_list ap, char **s1) /* Type octal Integer */ 
 {
 	unsigned int 	res;
+	char			*tmp;
 
 	res = va_arg(ap, unsigned int);
-	*s1 = ft_strinsert(*s1, ft_uitoa_base(res, 8), 1);
+	tmp = ft_uitoa_base(res, 8);
+	*s1 = ft_strinsert(*s1, tmp, 1);
+	ft_strdel(&tmp);
 	return (0);
 }

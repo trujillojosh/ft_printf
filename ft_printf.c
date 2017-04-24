@@ -33,11 +33,13 @@ int		ft_printf(const char *input, ...)
 	va_list 	ap;
 	int 		i;
 	char 		*str;
+	char 		*tmp;
 
 	i = ft_char_count((char *)input, '%') - 1;
 	if (i == 0)
 		i++;
 	str = ft_strdup(input);
+	tmp = str;
 	va_start(ap, input);
 	while (i > 0)
 	{
@@ -46,7 +48,10 @@ int		ft_printf(const char *input, ...)
 		else
 			break ;
 	}
-	ft_putstr(ft_strinsert("", "", 2));
+	ft_strdel(&tmp);
+	tmp = ft_strinsert("", "", 2);
+	ft_putstr(tmp);
+	ft_strdel(&tmp);
 	va_end(ap);
 	return (0);
 }

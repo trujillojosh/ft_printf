@@ -19,16 +19,24 @@ static int		ft_find_width(char **todo)
 	char	*length;
 
 	j = 0;
-	i = ft_strlen(*todo) - 2;
-	while ((ft_isdigit((*todo)[i]) == 1) && (ft_isdigit((*todo)[i - 1]) != 0))
+	if ((i = ft_strlen(*todo) - 2) < 0)
+		i = 0;
+	while (ft_isdigit((*todo)[i]) == 1)
+	{
+		if (i != 0)
+			if (ft_isdigit((*todo)[i - 1] == 0))
+				break ;
 		i--;
+		if (i < 0)
+			break ;
+	}
 	if (i < (ft_strlen(*todo) - 2))
 	{
 		if (((*todo)[i] == '0') && ((i + 1) != (ft_strlen(*todo) - 2)))
 			i++;
 		j = (ft_strlen(*todo) - 2) - i + 1;
-		length = ft_strnew(j);
-		length = ft_strncpy(length, &(*todo)[i], j);
+		// length = ft_strnew(j);
+		length = ft_strncpy(ft_strnew(j), &(*todo)[i], j);
 		j = ft_atoi(length);
 		ft_strdel(&length);
 	}
@@ -40,7 +48,6 @@ int		ft_width(char **str, char **todo, int start)
 	int		width;
 	char	*tmp;
 	char	*tmp2;
-	int 	test = 0;
 
 	width = ft_find_width(todo) - ft_strlen(&(*str)[start]);
 	if ((ft_strlen(&(*str)[start]) < width) && (width > 0))
@@ -51,7 +58,5 @@ int		ft_width(char **str, char **todo, int start)
 		ft_strdel(&tmp);
 		ft_strdel(&tmp2);
 	}
-	else
-		test = ft_strlen(&(*str)[start]);
 	return (0);
 }

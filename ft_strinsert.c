@@ -14,21 +14,29 @@
 
 /* Searches for percent sign within s1, and inserts s2 between two words */
 
+static char *ft_helper(int mode, char **str, char **s1)
+{
+	if (mode == 3)
+	{
+		ft_strdel(str);
+		*str = ft_strdup(*s1);
+	}
+	if (*str)
+		return (*str);
+	else
+		return (NULL);
+}
+
 char		*ft_strinsert(char *s1, char *s2, int mode)
 {
 	static char 	*str;
 	char			*res;
+	char 			*tmp;
 	int				i;
 	
 	i = 0;
-	if (!str)
-		str = ft_strnew(1);
 	if ((mode == 2) || (mode == 3))
-	{
-		if (mode == 3)
-			ft_str_replace(&str, s1);
-		return (str);
-	}
+		return (ft_helper(mode, &str, &s1));
 	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);
 	while (*s1 != '%')
 		res[i++] = *s1++;
@@ -37,7 +45,15 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 	while (ft_is_over(*s1, 1))
 		s1++;
 	res[i] = '\0';
-	ft_str_replace(&str, ft_strjoin(str, res));
+	if (str)
+	{
+		tmp = ft_strjoin(str, res);
+		ft_strdel(&str);
+		str = ft_strdup(tmp);
+		ft_strdel(&tmp);
+	}
+	else
+		str = ft_strdup(res);
 	ft_strdel(&res);
 	return (s1);
 }
