@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:54:31 by jtrujill          #+#    #+#             */
-/*   Updated: 2016/12/01 14:47:26 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/04/24 14:48:36 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	s = (char *)malloc(sizeof(str));
-	s = str;
+	s = (char *)str;
 	while (i < n)
 	{
 		s[i] = c;

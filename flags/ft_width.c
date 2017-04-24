@@ -32,9 +32,9 @@ static int		ft_find_width(char **todo)
 	}
 	if (i < (int)(ft_strlen(*todo) - 2))
 	{
-		if (((*todo)[i] == '0') && ((i + 1) != (ft_strlen(*todo) - 2)))
-			i++;
 		if (i == -1)
+			i++;
+		if (((*todo)[i] == '0') && ((i + 1) != (ft_strlen(*todo) - 2)))
 			i++;
 		j = (ft_strlen(*todo) - 2) - i + 1;
 		length = ft_strncpy(ft_strnew(j), &(*todo)[i], j);
@@ -49,15 +49,20 @@ int		ft_width(char **str, char **todo, int start)
 	int		width;
 	char	*tmp;
 	char	*tmp2;
+	char 	*tmp3;
 
 	width = ft_find_width(todo) - ft_strlen(&(*str)[start]);
 	if ((ft_strlen(&(*str)[start]) < width) && (width > 0))
 	{
 		tmp = ft_strncpy(ft_strnew(start), (const char *)*str, start);
 		tmp2 = ft_memset(ft_strnew(width), ' ', width);
-		ft_strinsert(ft_strjoin(tmp, ft_strjoin(tmp2, &(*str)[start])), "", 3);
+		tmp3 = ft_strjoin(tmp2, &(*str)[start]);
+		ft_strdel(&tmp2);
+		tmp2 = ft_strjoin(tmp, tmp3);
+		ft_strinsert(tmp2, "", 3);
 		ft_strdel(&tmp);
 		ft_strdel(&tmp2);
+		ft_strdel(&tmp3);
 	}
 	return (0);
 }
