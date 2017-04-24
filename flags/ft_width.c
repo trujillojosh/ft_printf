@@ -30,12 +30,13 @@ static int		ft_find_width(char **todo)
 		if (i < 0)
 			break ;
 	}
-	if (i < (ft_strlen(*todo) - 2))
+	if (i < (int)(ft_strlen(*todo) - 2))
 	{
 		if (((*todo)[i] == '0') && ((i + 1) != (ft_strlen(*todo) - 2)))
 			i++;
+		if (i == -1)
+			i++;
 		j = (ft_strlen(*todo) - 2) - i + 1;
-		// length = ft_strnew(j);
 		length = ft_strncpy(ft_strnew(j), &(*todo)[i], j);
 		j = ft_atoi(length);
 		ft_strdel(&length);
