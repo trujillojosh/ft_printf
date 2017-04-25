@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 17:44:26 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/10 19:00:22 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/04/24 17:39:01 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static char 	*ft_find_type(char *str)
 		str++;
 	}
 	ret[j] = '\0';
+	printf("\n\ni is %d, j is %d\n\n", i, j);
 	return (ret);
 }
 
@@ -60,18 +61,19 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 	return (-1);
 }
 
-static int	ft_flags(va_list ap, char *todo, char **str)
+static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
-	char	*tmp;
+	//char	*tmp;
 
 	i = 0;
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
-	if (ft_dispatch(ap, todo[ft_strlen(todo) - 1], str) < 0)
+	if (ft_dispatch(ap, (*todo)[ft_strlen(*todo) - 1], str) < 0)
 		return (-1);
-	tmp = ft_strinsert("", "", 2); //is new static variable after dispatch, i is position of last edit
-	ft_width(&tmp, &todo, i);
+	// tmp = ft_strinsert("", "", 2); //is new static variable after dispatch, i is position of last edit
+	ft_width(ft_strinsert("", "", 2), todo, i);
+	// ft_plus(ft_strinsert("", "", 2), todo, i);
 	// printf("\nThis is after ft_dispatch, i is %d\n%s\n", i, tmp);
 	return (1);
 }
@@ -81,7 +83,7 @@ int			ft_next_arg(va_list ap, char **str, int i)
 	char	*type;
 	
 	type = ft_find_type(*str);
-	if (ft_flags(ap, type, str) < 0)
+	if (ft_flags(ap, &type, str) < 0)
 	{
 		ft_strdel(&type);
 		return (-1);

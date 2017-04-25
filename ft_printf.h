@@ -50,6 +50,7 @@ static char	*ft_find_type(char *str);
 int 	main(int argc, char **argv);
 char	*ft_strinsert(char *s1, char *s2, int mode);
 int 	ft_is_over(char c, int mode);
-int 	ft_width(char **str, char **todo, int start);
+int 	ft_width(char *str, char **todo, int start);
+char	*ft_remove_todo(char *todo, char *remove);
 
 #endif

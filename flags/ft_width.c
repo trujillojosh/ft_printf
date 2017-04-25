@@ -44,25 +44,31 @@ static int		ft_find_width(char **todo)
 	return (j);
 }
 
-int		ft_width(char **str, char **todo, int start)
+int		ft_width(char *str, char **todo, int start)
 {
 	int		width;
 	char	*tmp;
 	char	*tmp2;
 	char 	*tmp3;
 
-	width = ft_find_width(todo) - ft_strlen(&(*str)[start]);
-	if ((ft_strlen(&(*str)[start]) < width) && (width > 0))
+	width = ft_find_width(todo) - ft_strlen(&str[start]);
+	if ((ft_strlen(&str[start]) < width) && (width > 0))
 	{
-		tmp = ft_strncpy(ft_strnew(start), (const char *)*str, start);
+		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
 		tmp2 = ft_memset(ft_strnew(width), ' ', width);
-		tmp3 = ft_strjoin(tmp2, &(*str)[start]);
+		tmp3 = ft_strjoin(tmp2, &str[start]);
 		ft_strdel(&tmp2);
 		tmp2 = ft_strjoin(tmp, tmp3);
 		ft_strinsert(tmp2, "", 3);
 		ft_strdel(&tmp);
 		ft_strdel(&tmp2);
 		ft_strdel(&tmp3);
+		tmp = ft_itoa(ft_find_width(todo));
+		tmp2 = ft_remove_todo(*todo, tmp);
+		ft_strdel(todo);
+		*todo = ft_strdup(tmp2);
+		ft_strdel(&tmp2);
+		ft_strdel(&tmp);
 	}
 	return (0);
 }
