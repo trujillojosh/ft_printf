@@ -34,7 +34,6 @@ static char 	*ft_find_type(char *str)
 		str++;
 	}
 	ret[j] = '\0';
-	printf("\n\ni is %d, j is %d\n\n", i, j);
 	return (ret);
 }
 
@@ -71,10 +70,8 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if (ft_dispatch(ap, (*todo)[ft_strlen(*todo) - 1], str) < 0)
 		return (-1);
-	// tmp = ft_strinsert("", "", 2); //is new static variable after dispatch, i is position of last edit
 	ft_width(ft_strinsert("", "", 2), todo, i);
-	// ft_plus(ft_strinsert("", "", 2), todo, i);
-	// printf("\nThis is after ft_dispatch, i is %d\n%s\n", i, tmp);
+	ft_plus(ft_strinsert("", "", 2), todo, i);
 	return (1);
 }
 

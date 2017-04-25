@@ -18,7 +18,7 @@
 # include <stdio.h> //take this shit out before submitting
 
 int		ft_printf(const char *input, ...)__attribute__((format(printf,1,2)));
-int		ft_plus(char **s1);
+int		ft_plus(char *str, char **todo, int start);
 int		ft_minus(char **s1);
 int		ft_0(char **s1);
 int		ft_h(char **s1);
