@@ -72,6 +72,7 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		return (-1);
 	ft_width(ft_strinsert("", "", 2), *todo, i);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
+	ft_space(ft_strinsert("", "", 2), *todo, i);
 	return (1);
 }
 
