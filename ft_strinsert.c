@@ -18,7 +18,8 @@ static char *ft_helper(int mode, char **str, char **s1)
 {
 	if (mode == 3)
 	{
-		ft_strdel(str);
+		if (str)
+			ft_strdel(str);
 		*str = ft_strdup(*s1);
 	}
 	if (*str)
@@ -35,6 +36,12 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 	int				i;
 	
 	i = 0;
+	if (mode == 4)
+	{
+		if(str)
+			ft_strdel(&str);
+		return (NULL);
+	}
 	if ((mode == 2) || (mode == 3))
 		return (ft_helper(mode, &str, &s1));
 	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);

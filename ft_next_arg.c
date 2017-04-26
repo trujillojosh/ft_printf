@@ -70,8 +70,8 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if (ft_dispatch(ap, (*todo)[ft_strlen(*todo) - 1], str) < 0)
 		return (-1);
-	ft_width(ft_strinsert("", "", 2), todo, i);
-	ft_plus(ft_strinsert("", "", 2), todo, i);
+	ft_width(ft_strinsert("", "", 2), *todo, i);
+	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	return (1);
 }
 
