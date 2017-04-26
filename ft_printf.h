@@ -30,11 +30,6 @@ int		ft_ll(char **s1);
 int		ft_space(char *str, char *todo, int start);
 int		ft_z(char **s1);
 
-int		ft_up_c(char **s1);
-int		ft_up_d(char **s1);
-int		ft_up_o(char **s1);
-int		ft_up_s(char **s1);
-int		ft_up_u(char **s1);
 int		ft_up_x(va_list ap, char **s1);
 int		ft_c(va_list ap, char **s1);
 int		ft_d(va_list ap, char **s1);

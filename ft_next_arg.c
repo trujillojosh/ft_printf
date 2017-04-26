@@ -39,19 +39,19 @@ static char 	*ft_find_type(char *str)
 
 static int 	ft_dispatch(va_list ap, char c, char **str)
 {
-	if (c == 's')
+	if ((c == 's') || c == 'S')
 		return (ft_s(ap, str));
-	else if ((c == 'd') || (c == 'i'))
+	else if ((c == 'd') || (c == 'i') || (c == 'D'))
 		return (ft_d(ap, str));
-	else if (c == 'c')
+	else if ((c == 'c') || (c == 'C'))
 		return (ft_c(ap, str));
 	else if (c == '%')
 		return (ft_percent(str));
 	else if (c == 'p')
 		return (ft_p(ap, str));
-	else if (c == 'o')
+	else if ((c == 'o') || (c == 'O'))
 		return (ft_o(ap, str));
-	else if (c == 'u')
+	else if ((c == 'u') || (c == 'U'))
 		return (ft_u(ap, str));
 	else if (c == 'x')
 		return (ft_x(ap, str));

@@ -50,18 +50,15 @@ int		ft_width(char *str, char *todo, int start)
 	char	*tmp;
 	char	*tmp2;
 	char 	*tmp3;
-	int 	test = 0;
 
 	width = ft_find_width(todo) - ft_strlen(&str[start]);
 	if (str[ft_strlen(&str[start]) - 1] == '\n')
 		width++;
-	// printf("\n\nfind width is %d\nstrlen is %d\nstr from start is %s\n\n", ft_find_width(todo), (int)ft_strlen(&str[start]), &str[start]);
 	if ((ft_strlen(&str[start]) < width) && (width > 0))
 	{
 		if ((ft_char_count(todo, ' ') > 0) || (ft_char_count(todo, '+') > 0))
 		{
-			test = ft_atoi(&str[start]);
-			if (test >= 0)
+			if (ft_atoi(&str[start]) >= 0)
 				width--;
 		}
 		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
@@ -74,9 +71,6 @@ int		ft_width(char *str, char *todo, int start)
 		ft_strdel(&tmp2);
 		ft_strdel(&tmp3);
 		tmp = ft_itoa(ft_find_width(todo));
-		// tmp2 = ft_remove_todo(*todo, tmp);
-		// *todo = ft_strdup(tmp2);
-		// ft_strdel(&tmp2);
 		ft_strdel(&tmp);
 	}
 	return (0);

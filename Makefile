@@ -6,7 +6,7 @@
 #    By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 22:45:57 by jtrujill          #+#    #+#              #
-#    Updated: 2017/04/24 23:19:24 by jtrujill         ###   ########.fr        #
+#    Updated: 2017/04/26 16:37:41 by jtrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ INC = -I ft_printf.h
 FLAGS = gcc
 #-Wall -Wextra -Werror#
 
-SRCS = ft_printf.c conversions/ft_up_c.c conversions/ft_up_d.c conversions/ft_up_o.c \
-	   conversions/ft_up_s.c conversions/ft_up_u.c conversions/ft_up_x.c conversions/ft_c.c \
-	   conversions/ft_d.c conversions/ft_o.c conversions/ft_p.c \
-	   conversions/ft_s.c conversions/ft_u.c conversions/ft_x.c flags/ft_plus.c \
-	   flags/ft_minus.c flags/ft_0.c flags/ft_h.c flags/ft_hashtag.c flags/ft_hh.c \
-	   flags/ft_j.c flags/ft_l.c flags/ft_ll.c flags/ft_space.c flags/ft_z.c conversions/ft_percent.c \
-	   ft_next_arg.c ft_strinsert.c ft_is_over.c flags/ft_width.c ft_remove_todo.c
+SRCS = ft_printf.c conversions/ft_up_x.c conversions/ft_c.c conversions/ft_d.c \
+	   conversions/ft_o.c conversions/ft_p.c conversions/ft_s.c \
+	   conversions/ft_u.c conversions/ft_x.c flags/ft_plus.c flags/ft_minus.c \
+	   flags/ft_0.c flags/ft_h.c flags/ft_hashtag.c flags/ft_hh.c flags/ft_j.c \
+	   flags/ft_l.c flags/ft_ll.c flags/ft_space.c flags/ft_z.c \
+	   conversions/ft_percent.c ft_next_arg.c ft_strinsert.c ft_is_over.c \
+	   flags/ft_width.c ft_remove_todo.c
 
 all: $(NAME)
 
