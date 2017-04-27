@@ -39,7 +39,7 @@ int		ft_hash(char *str, char *todo, int start)
 		ft_strdel(&tmp3);
 		ft_strinsert(tmp2, "", 3);
 		ft_strdel(&tmp2);
-		
+		return (1);
 	}
 	return (0);
 }

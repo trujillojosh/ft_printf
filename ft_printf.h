@@ -19,8 +19,8 @@
 
 int		ft_printf(const char *input, ...)__attribute__((format(printf,1,2)));
 int		ft_plus(char *str, char *todo, int start);
-int		ft_minus(char **s1);
-int		ft_0(char **s1);
+int		ft_minus(char *str, char *todo, int opt);
+int		ft_0(char *str, char *todo, int opt);
 int		ft_h(char **s1);
 int		ft_hash(char *str, char *todo, int start);
 int		ft_hh(char **s1);

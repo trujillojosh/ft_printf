@@ -74,7 +74,9 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	ft_width(ft_strinsert("", "", 2), *todo, i);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
-	ft_hash(ft_strinsert("", "", 2), *todo, i);
+	i = ft_hash(ft_strinsert("", "", 2), *todo, i);
+	ft_0(ft_strinsert("", "", 2), *todo, i);
+	ft_minus(ft_strinsert("", "", 2), *todo, i);
 	*str = ft_strinsert(*str, "", 0);
 	//printf("end *str is %s\n\n", *str);
 	return (1);
