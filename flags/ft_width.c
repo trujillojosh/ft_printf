@@ -26,11 +26,14 @@ static int		ft_find_width(char *todo)
 		if (i != 0)
 			if (ft_isdigit((todo)[i - 1] == 0))
 				break ;
-		i--;
+		if (ft_isdigit(todo[i - 1]) != 0)
+			i--;
+		else
+			break ;
 		if (i < 0)
 			break ;
 	}
-	if (i < (int)(ft_strlen(todo) - 2))
+	if (i <= (int)(ft_strlen(todo) - 2))
 	{
 		if (i == -1)
 			i++;
@@ -43,7 +46,6 @@ static int		ft_find_width(char *todo)
 	}
 	return (j);
 }
-
 int		ft_width(char *str, char *todo, int start)
 {
 	int		width;
@@ -51,27 +53,47 @@ int		ft_width(char *str, char *todo, int start)
 	char	*tmp2;
 	char 	*tmp3;
 
-	width = ft_find_width(todo) - ft_strlen(&str[start]);
+	width = ft_find_width(todo) - (int)ft_strlen(&str[start]);
 	if (str[ft_strlen(&str[start]) - 1] == '\n')
 		width++;
-	if ((ft_strlen(&str[start]) < width) && (width > 0))
+	if (width > 0)
 	{
 		if ((ft_char_count(todo, ' ') > 0) || (ft_char_count(todo, '+') > 0))
 		{
 			if (ft_atoi(&str[start]) >= 0)
 				width--;
 		}
-		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
-		tmp2 = ft_memset(ft_strnew(width), ' ', width);
-		tmp3 = ft_strjoin(tmp2, &str[start]);
-		ft_strdel(&tmp2);
-		tmp2 = ft_strjoin(tmp, tmp3);
-		ft_strinsert(tmp2, "", 3);
-		ft_strdel(&tmp);
-		ft_strdel(&tmp2);
-		ft_strdel(&tmp3);
-		tmp = ft_itoa(ft_find_width(todo));
-		ft_strdel(&tmp);
+		if (ft_char_count(todo, '#') > 0)
+		{
+			width--;
+			if ((todo[ft_strlen(todo) - 1] == 'x') || (todo[ft_strlen(todo) - 1] == 'X'))
+				width--;
+		}
+		if (width > 0)
+		{
+			if (start > 0)
+			{
+				tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
+				// tmp2 = ft_memset(ft_strnew(width), ' ', width);
+				tmp3 = ft_strjoin(tmp2, &str[start]);
+				ft_strdel(&tmp2);
+				tmp2 = ft_strjoin(tmp, tmp3);
+				ft_strinsert(tmp2, "", 3);
+				ft_strdel(&tmp);
+				ft_strdel(&tmp2);
+				ft_strdel(&tmp3);
+			}
+			else
+			{
+				tmp = ft_strdup(str);
+				tmp2 = ft_memset(ft_strnew(width), ' ', width);
+				tmp3 = ft_strjoin(tmp2, str);
+				ft_strinsert(tmp3, "", 3);
+				ft_strdel(&tmp);
+				ft_strdel(&tmp2);
+				ft_strdel(&tmp3);
+			}			
+		}
 	}
 	return (0);
 }

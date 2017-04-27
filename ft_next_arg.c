@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 17:44:26 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/24 17:39:01 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/04/26 23:31:13 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,10 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
-	//char	*tmp;
+	char	*tmp;
 
 	i = 0;
+	//printf("\n\nbegin *str is %s\n", *str);
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if (ft_dispatch(ap, (*todo)[ft_strlen(*todo) - 1], str) < 0)
@@ -73,6 +74,9 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	ft_width(ft_strinsert("", "", 2), *todo, i);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
+	ft_hash(ft_strinsert("", "", 2), *todo, i);
+	*str = ft_strinsert(*str, "", 0);
+	//printf("end *str is %s\n\n", *str);
 	return (1);
 }
 

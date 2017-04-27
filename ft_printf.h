@@ -22,7 +22,7 @@ int		ft_plus(char *str, char *todo, int start);
 int		ft_minus(char **s1);
 int		ft_0(char **s1);
 int		ft_h(char **s1);
-int		ft_hashtag(char **s1);
+int		ft_hash(char *str, char *todo, int start);
 int		ft_hh(char **s1);
 int		ft_j(char **s1);
 int		ft_l(char **s1);

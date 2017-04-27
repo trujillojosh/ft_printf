@@ -36,21 +36,38 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 	int				i;
 	
 	i = 0;
-	if (mode == 4)
+	if (mode == 0)
+	{
+		res = ft_strnew(ft_strlen(s1));
+		while ((*s1 != '%') && (*s1 != '\0'))
+			res[i++] = *s1++;
+		if (str)
+		{
+			tmp = ft_strjoin(str, res);
+			ft_strdel(&str);
+			str = ft_strdup(tmp);
+			ft_strdel(&tmp);
+		}
+		else
+			str = ft_strdup(res);
+		ft_strdel(&res);
+		return (s1);
+	}
+	else if (mode == 4)
 	{
 		if(str)
 			ft_strdel(&str);
 		return (NULL);
 	}
-	if ((mode == 2) || (mode == 3))
+	else if ((mode == 2) || (mode == 3))
 		return (ft_helper(mode, &str, &s1));
 	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);
 	while (*s2 != '\0')
 		res[i++] = *s2++;
 	while (ft_is_over(*s1, 1))
 		s1++;
-	while ((*s1 != '%') && (*s1 != '\0'))
-		res[i++] = *s1++;
+	// while ((*s1 != '%') && (*s1 != '\0'))
+	// 	res[i++] = *s1++;
 	res[i] = '\0';
 	if (str)
 	{
