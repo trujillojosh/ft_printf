@@ -74,7 +74,7 @@ int		ft_width(char *str, char *todo, int start)
 			if (start > 0)
 			{
 				tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
-				// tmp2 = ft_memset(ft_strnew(width), ' ', width);
+				tmp2 = ft_memset(ft_strnew(width), ' ', width);
 				tmp3 = ft_strjoin(tmp2, &str[start]);
 				ft_strdel(&tmp2);
 				tmp2 = ft_strjoin(tmp, tmp3);
