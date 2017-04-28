@@ -46,6 +46,7 @@ static int		ft_find_width(char *todo)
 	}
 	return (j);
 }
+
 int		ft_width(char *str, char *todo, int start)
 {
 	int		width;
