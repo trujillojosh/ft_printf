@@ -21,6 +21,8 @@ static int		ft_find_width(char *todo)
 	j = 0;
 	if ((i = ft_strlen(todo) - 2) < 0)
 		i = 0;
+	if (todo[i] == '-')
+		i--;
 	while (ft_isdigit((todo)[i]) == 1)
 	{
 		if (i != 0)
@@ -93,7 +95,7 @@ int		ft_width(char *str, char *todo, int start)
 				ft_strdel(&tmp);
 				ft_strdel(&tmp2);
 				ft_strdel(&tmp3);
-			}			
+			}
 		}
 	}
 	return (0);

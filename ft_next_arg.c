@@ -66,7 +66,6 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	char	*tmp;
 
 	i = 0;
-	//printf("\n\nbegin *str is %s\n", *str);
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if (ft_dispatch(ap, (*todo)[ft_strlen(*todo) - 1], str) < 0)
@@ -74,11 +73,10 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	ft_width(ft_strinsert("", "", 2), *todo, i);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
-	i = ft_hash(ft_strinsert("", "", 2), *todo, i);
+	ft_hash(ft_strinsert("", "", 2), *todo, i); //had i = hash originally but didn't see the need
 	ft_0(ft_strinsert("", "", 2), *todo, i);
 	ft_minus(ft_strinsert("", "", 2), *todo, i);
 	*str = ft_strinsert(*str, "", 0);
-	//printf("end *str is %s\n\n", *str);
 	return (1);
 }
 
