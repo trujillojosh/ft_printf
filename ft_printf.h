@@ -35,7 +35,7 @@ int		ft_c(va_list ap, char **s1);
 int		ft_d(va_list ap, char **s1);
 int		ft_o(va_list ap, char **s1);
 int		ft_p(va_list ap, char **s1);
-int		ft_s(va_list ap, char **s1);
+int		ft_s(va_list ap, char **s1, int pres);
 int		ft_u(va_list ap, char **s1);
 int		ft_x(va_list ap, char **s1);
 int 	ft_percent(char **s1);
@@ -47,5 +47,7 @@ char	*ft_strinsert(char *s1, char *s2, int mode);
 int 	ft_is_over(char c, int mode);
 int 	ft_width(char *str, char *todo, int start);
 char	*ft_remove_todo(char *todo, char *remove);
+int 	find_precision(char *todo);
+int		ft_precision(char *str, char *todo, int start, int prec);
 
 #endif

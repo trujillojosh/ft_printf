@@ -23,6 +23,13 @@ static int		ft_find_width(char *todo)
 		i = 0;
 	if (todo[i] == '-')
 		i--;
+	if (ft_char_count(todo, '.') > 0)
+	{
+		while ((todo[i] != '\0') && (todo[i] != '.'))
+			i--;
+		if ((todo[i] == '.') && (todo[i - 1] != '\0'))
+			i--;
+	}
 	while (ft_isdigit((todo)[i]) == 1)
 	{
 		if (i != 0)

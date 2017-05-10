@@ -37,10 +37,13 @@ static char 	*ft_find_type(char *str)
 	return (ret);
 }
 
-static int 	ft_dispatch(va_list ap, char c, char **str)
+static int 	ft_dispatch(va_list ap, char **todo, char **str, int i)
 {
+	char c;
+
+	c = (*todo)[ft_strlen(*todo) - 1];
 	if ((c == 's') || c == 'S')
-		return (ft_s(ap, str));
+		return (ft_s(ap, str, i));
 	else if ((c == 'd') || (c == 'i') || (c == 'D'))
 		return (ft_d(ap, str));
 	else if ((c == 'c') || (c == 'C'))
@@ -60,16 +63,54 @@ static int 	ft_dispatch(va_list ap, char c, char **str)
 	return (-1);
 }
 
+// static int	ft_specs(va_list ap, char **todo, char **str)
+// {
+// 	char 	*tmp;
+// 	int 	i;
+
+// 	tmp = ft_strdup(*todo);
+// 	i = 0;
+// 	if (ft_char_count('l', *todo) > 0)
+// 	{
+// 		while ((*tmp != '\0') && (tmp != 'l'))
+// 			tmp++;
+// 		if ((*tmp == 'l') && (*(tmp + 1) == 'l'))
+// 			i = ft_ll(ap, ((*todo)[ft_strlen(*todo) - 1]), str);
+// 		else
+// 			i = ft_l(ap, ((*todo)[ft_strlen(*todo) - 1]), str);
+// 	}
+// 	else if (ft_char_count('h', *todo) > 0)
+// 	{
+// 		while ((*tmp != '\0') && (tmp != 'h'))
+// 			tmp++;
+// 		if ((*tmp == 'h') && (*(tmp + 1) == 'h'))
+// 			i = ft_hh(ap, ((*todo)[ft_strlen(*todo) - 1]), str);
+// 		else
+// 			i = ft_h(ap, ((*todo)[ft_strlen(*todo) - 1]), str);
+// 	}
+// 	else if (ft_char_count('j') > 0)
+// 		i = ft_j(ap, ((*todo)[ft_strlen(*todo) - 1]), str);
+// 	else if (ft_char_count('z') > 0)
+// 		i = ft_z(ap, ((*todo)[ft_strlen(*todo) - 1]), str);
+// 	free(tmp);
+// 	return (i);
+// }
+
 static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
+	int 	prec;
 	char	*tmp;
 
 	i = 0;
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
-	if (ft_dispatch(ap, (*todo)[ft_strlen(*todo) - 1], str) < 0)
+	if ((prec = find_precision(*todo)) < -1) //-1 reps no precison
 		return (-1);
+	if (ft_dispatch(ap, todo, str, prec) < 0)
+		return (-1);
+	if (prec >= 0)
+		ft_precision(ft_strinsert("", "", 2), *todo, i, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);

@@ -22,7 +22,7 @@ int 	main(int argc, char **argv)
 	// printf("This is a test %o", a);
 	// printf("%050d", a);
 	// ft_printf("% -0d", 10);
-	ft_printf("%#12o Hello, percent %% %s, %cesting %++5d%+i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
+	// ft_printf("%#12o Hello, percent %% %s, %cesting %++5d%+i\n%p", c, "World", 't', ft_atoi("-9"), ft_atoi("0"), b);
 	// printf("%#-15X\n", 12);
 	// ft_printf("%#-15X", 12);
 	// ft_printf("%#19x", c);
@@ -34,7 +34,7 @@ int 	main(int argc, char **argv)
 	// ft_printf("%+12d", 12);
 	// printf("%i\n%p", ft_atoi("123"), b);
 	// printf("testing, %+012d", 98);
-	return (0);
+	printf( "%25.5d", 112);
 }
 
 int		ft_printf(const char *input, ...)

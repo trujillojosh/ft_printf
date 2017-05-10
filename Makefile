@@ -21,7 +21,7 @@ SRCS = ft_printf.c conversions/ft_up_x.c conversions/ft_c.c conversions/ft_d.c \
 	   flags/ft_0.c flags/ft_h.c flags/ft_hh.c flags/ft_j.c flags/ft_hash.c \
 	   flags/ft_l.c flags/ft_ll.c flags/ft_space.c flags/ft_z.c \
 	   conversions/ft_percent.c ft_next_arg.c ft_strinsert.c ft_is_over.c \
-	   flags/ft_width.c ft_remove_todo.c
+	   flags/ft_width.c ft_remove_todo.c flags/ft_precision.c
 
 all: $(NAME)
 
