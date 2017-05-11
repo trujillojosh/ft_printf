@@ -12,7 +12,7 @@
 
 #include "../ft_printf.h"
 
-int		ft_s(va_list ap, char **s1, int prec) /* type string */ 
+int		ft_s(va_list ap, char **s1, int prec, int spec) /* type string */ 
 {
 	char	*var;
 	char 	*tmp;

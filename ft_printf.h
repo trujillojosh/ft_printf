@@ -30,19 +30,19 @@ int		ft_ll(char **s1);
 int		ft_space(char *str, char *todo, int start);
 int		ft_z(char **s1);
 
-int		ft_up_x(va_list ap, char **s1);
-int		ft_c(va_list ap, char **s1);
-int		ft_d(va_list ap, char **s1);
-int		ft_o(va_list ap, char **s1);
+int		ft_up_x(va_list ap, char **s1, int spec);
+int		ft_c(va_list ap, char **s1, int spec);
+int		ft_d(va_list ap, char **s1, int spec);
+int		ft_o(va_list ap, char **s1, int spec);
 int		ft_p(va_list ap, char **s1);
-int		ft_s(va_list ap, char **s1, int pres);
-int		ft_u(va_list ap, char **s1);
-int		ft_x(va_list ap, char **s1);
+int		ft_s(va_list ap, char **s1, int pres, int spec);
+int		ft_u(va_list ap, char **s1, int spec);
+int		ft_x(va_list ap, char **s1, int spec);
 int 	ft_percent(char **s1);
 
 int		ft_next_arg(va_list ap, char **str, int i);
 static char	*ft_find_type(char *str);
-int 	main(int argc, char **argv);
+// int 	main(int argc, char **argv);
 char	*ft_strinsert(char *s1, char *s2, int mode);
 int 	ft_is_over(char c, int mode);
 int 	ft_width(char *str, char *todo, int start);

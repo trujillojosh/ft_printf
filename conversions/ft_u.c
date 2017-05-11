@@ -12,11 +12,11 @@
 
 #include "../ft_printf.h"
 
-int		ft_u(va_list ap, char **s1) /* type unsigned int */ 
+int		ft_u(va_list ap, char **s1, int spec) /* type unsigned int */ 
 {
-	unsigned int 	res;
+	void	*res;
 
-	res = va_arg(ap, unsigned int);
-	*s1 = ft_strinsert(*s1, ft_uitoa_base(res, 10), 1);
+	res = va_arg(ap, void *);
+	*s1 = ft_strinsert(*s1, ft_uitoa_base((unsigned int)res, 10), 1);
 	return (0);
 }
