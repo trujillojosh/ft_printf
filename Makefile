@@ -27,10 +27,10 @@ all: $(NAME)
 
 $(NAME):
 	@make all -C libft
-	@$(FLAGS) $(INC) -o $(NAME) $(SRCS) -L libft/ -lft -g
-	# @$(FLAGS) -c $(INC) $(SRCS)
-	# ar rc $(NAME) *.o libft/libft.a
-	# ranlib $(NAME)
+	# @$(FLAGS) $(INC) -o $(NAME) $(SRCS) -L libft/ -lft -g
+	@$(FLAGS) -c $(INC) $(SRCS)
+	ar rc $(NAME) *.o libft/libft.a
+	ranlib $(NAME)
 
 clean:
 	@make clean -C libft
