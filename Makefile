@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  libftprintf.a
+NAME =  ft_printf
 INC = -I ft_printf.h
 FLAGS = gcc
 #-Wall -Wextra -Werror#
@@ -27,10 +27,10 @@ all: $(NAME)
 
 $(NAME):
 	@make all -C libft
-	# @$(FLAGS) $(INC) -o $(NAME) $(SRCS) -L libft/ -lft -g
-	@$(FLAGS) -c $(INC) $(SRCS)
-	ar rc $(NAME) *.o libft/libft.a
-	ranlib $(NAME)
+	@$(FLAGS) $(INC) -o $(NAME) $(SRCS) -L libft/ -lft -g
+	# @$(FLAGS) -c $(INC) $(SRCS)
+	# ar rc $(NAME) *.o libft/libft.a
+	# ranlib $(NAME)
 
 clean:
 	@make clean -C libft

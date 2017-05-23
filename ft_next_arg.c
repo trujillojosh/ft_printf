@@ -98,7 +98,6 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	int		i;
 	int 	j;
 	int 	prec;
-	char	*tmp;
 
 	i = 0;
 	if (ft_strinsert("", "", 2))
@@ -106,7 +105,7 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	if ((prec = find_precision(*todo)) < -1) //-1 reps no precison
 		return (-1);
 	j = ft_specs(*todo);
-	if (ft_tolower(*todo[ft_strlen(*todo) - 1]) == 's')
+	if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
 		ft_s(ap, str, prec, j);
 	else
 		if (ft_dispatch(ap, todo, str, j) < 0)

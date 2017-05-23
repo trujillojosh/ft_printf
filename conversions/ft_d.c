@@ -16,10 +16,9 @@
 
 int		ft_d(va_list ap, char **s1, int spec)
 {
-	void	*digit;
+	char	*digit;
 
 	digit = va_arg(ap, void *);
 	*s1 = ft_strinsert(*s1, ft_itoa((unsigned int)digit), 1);
-	free(digit);
 	return (0);
 }

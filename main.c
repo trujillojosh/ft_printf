@@ -34,5 +34,5 @@ int 	main(int argc, char **argv)
 	// ft_printf("%+12d", 12);
 	// printf("%i\n%p", ft_atoi("123"), b);
 	// printf("testing, %+012d", 98);
-	ft_printf( "%s", "Hello");
+	ft_printf( "%5d", 112);
 }

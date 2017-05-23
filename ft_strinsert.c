@@ -53,12 +53,6 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 		ft_strdel(&res);
 		return (s1);
 	}
-	else if (mode == 4)
-	{
-		if(str)
-			ft_strdel(&str);
-		return (NULL);
-	}
 	else if ((mode == 2) || (mode == 3))
 		return (ft_helper(mode, &str, &s1));
 	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 2);

@@ -33,10 +33,11 @@ static int		ft_find_width(char *todo)
 	while (ft_isdigit((todo)[i]) == 1)
 	{
 		if (i != 0)
+		{
 			if (ft_isdigit((todo)[i - 1] == 0))
 				break ;
-		if (ft_isdigit(todo[i - 1]) != 0)
 			i--;
+		}
 		else
 			break ;
 		if (i < 0)
