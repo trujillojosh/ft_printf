@@ -19,7 +19,7 @@ int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of 
 	int 	i;
 
 	i = 0;
-	if (ft_char_count(todo, '0') > 0)
+	if (ft_char_count(todo, '0') > 0) //wtf was i thinking
 	{
 		while (str[i] == ' ')
 			i++;

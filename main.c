@@ -32,7 +32,7 @@ int 	main(int argc, char **argv)
 	// ft_putchar('\n');
 	// printf("\n%+10d", 12);
 	// ft_printf("%+12d", 12);
-	// printf("%i\n%p", ft_atoi("123"), b);
+	ft_printf("%i\n%p", ft_atoi("123"), b);
 	// printf("testing, %+012d", 98);
-	ft_printf( "%5d", 112);
+	// ft_printf( "%5d", 112);
 }
