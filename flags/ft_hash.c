@@ -26,7 +26,7 @@ int		ft_hash(char *str, char *todo, int start)
 			start++;
 		i = ft_atoi(&str[start]);
 		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
-		tmp2 = ft_strncpy(ft_strnew(ft_strlen(&str[start]) - 1), (const char *)&str[start], (ft_strlen(&str[start] - 2)));
+		tmp2 = ft_strncpy(ft_strnew(ft_strlen(&str[start]) - 1), (const char *)&str[start], (ft_strlen(&str[start])));
 		if (todo[ft_strlen(todo) - 1] == 'o')
 			tmp3 = ft_strjoin("0", tmp2);
 		else if (todo[ft_strlen(todo) - 1] == 'x')

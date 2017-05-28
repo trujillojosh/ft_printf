@@ -42,7 +42,7 @@ int 	main(int argc, char **argv)
 	// ft_printf("%   %", "test");
 	// ft_printf("%.0%");
 	// ft_printf( "%.3d", 10 );
-	ft_printf("%   %");
+	ft_printf("%#x", 42);
 }
 
 int		ft_printf(const char *input, ...)

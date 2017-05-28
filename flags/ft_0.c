@@ -12,6 +12,22 @@
 
 #include "../ft_printf.h"
 
+static int ft_0_valid(char *todo)
+{
+	int 	i;
+
+	i = 0;
+	while ((todo[i] != '0') && (todo[i] != '\0'))
+	{
+		if ((ft_isdigit(todo[i])) || (todo[i] == '.'))
+			return (0);
+		i++;
+	}
+	if (todo[i] == '0')
+		return (1);
+	return (0);
+}
+
 int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of spaces */
 {
 	char	*tmp;
@@ -21,6 +37,8 @@ int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of 
 	i = 0;
 	if (ft_char_count(todo, '0') > 0) //wtf was i thinking
 	{
+		if (ft_0_valid(todo) == 0)
+			return (0);
 		while (str[i] == ' ')
 			i++;
 		if ((opt == 1) && ((todo[ft_strlen(todo) - 1] == 'x') || (todo[ft_strlen(todo) - 1] == 'X')))
