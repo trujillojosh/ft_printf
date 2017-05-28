@@ -18,7 +18,8 @@ int 	find_precision(char *todo)
 	char 	type;
 
 	i = 0;
-	type = todo[ft_strlen(todo) - 1];
+	if (ft_strlen(todo) > 0)
+		type = todo[ft_strlen(todo) - 1];
 	if (ft_char_count(todo, '.') > 0)
 	{
 		while ((*todo != '.') && (*todo != '\0'))
@@ -28,7 +29,7 @@ int 	find_precision(char *todo)
 		if (*todo == type)
 			return (0);
 		i = ft_atoi(todo); //i should represent precision amount
-		if (ft_strchr("sSdDioOuUxX", (int)type) != NULL)
+		if (ft_strchr("sSdDioOuUxX%", (int)type) != NULL)
 			return (i);
 		else
 			return (-2);

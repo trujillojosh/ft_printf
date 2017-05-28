@@ -12,6 +12,14 @@
 
 #include "../ft_printf.h"
 
+static int ft_space_valid(char c)
+{
+	if ((c == 'd') || (c == 'i') || (c == 'o') || (c == 'u') || (c == 'x') \
+		|| (c == 'p'))
+		return (1);
+	else
+		return (0);
+}
 int		ft_space(char *str, char *todo, int start) /* if no sign is going to be written, a blank space is inserted before the value */
 {
 	int 	i;
@@ -20,7 +28,7 @@ int		ft_space(char *str, char *todo, int start) /* if no sign is going to be wri
 	char	*tmp3;
 
 	i = 0;
-	if (ft_char_count(todo, ' ') > 0)
+	if ((ft_char_count(todo, ' ') > 0) && (ft_space_valid(ft_tolower(todo[ft_strlen(todo) - 1])) == 1))
 	{
 		while (str[start] == ' ')
 			start++;

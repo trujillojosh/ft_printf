@@ -13,6 +13,10 @@
 #include "ft_printf.h"
 
 /* Searches for percent sign within s1, and inserts s2 between two words */
+/* mode 0 strjoin str and s1 */
+/* mode 1 */
+/* mode 2 returns string stored in static string str */
+/* mode 3 replaces value of str with first param(s1) */
 
 static char *ft_helper(int mode, char **str, char **s1)
 {

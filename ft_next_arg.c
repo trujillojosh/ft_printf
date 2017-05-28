@@ -41,7 +41,10 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
 {
 	char c;
 
-	c = (*todo)[ft_strlen(*todo) - 1];
+	if (ft_strlen(*todo) > 0)
+		c = (*todo)[ft_strlen(*todo) - 1];
+	else
+		return (-1);
 	if ((c == 's') || c == 'S')
 		return (ft_s(ap, str, -1, specs));
 	else if ((c == 'd') || (c == 'i') || (c == 'D'))
@@ -100,12 +103,17 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	int 	prec;
 
 	i = 0;
+	ft_strinsert(*str, "", 0);
+	while ((**str != '%') && (**str != '\0'))
+		(*str)++;
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if ((prec = find_precision(*todo)) < -1) //-1 reps no precison
 		return (-1);
 	j = ft_specs(*todo);
-	if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
+	if (ft_strlen(*todo) == 0)
+		return (0);
+	else if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
 		ft_s(ap, str, prec, j);
 	else
 		if (ft_dispatch(ap, todo, str, j) < 0)

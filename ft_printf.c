@@ -32,10 +32,17 @@ int 	main(int argc, char **argv)
 	// ft_putchar('\n');
 	// printf("\n%+10d", 12);
 	// ft_printf("%+12d", 12);
-	// printf("%i\n%p", ft_atoi("123"), b);
+	// ft_printf("%i\n%p", ft_atoi("123"), b);
 	// ft_printf("testing, %+012d", 98);
 	// ft_printf( "%5d", 112);
-	ft_printf("hello");
+	// ft_printf("hello");
+	// ft_printf("%-5c", 'a');
+	// int res = ft_printf("%.0%");
+	// printf("\n\nres is --> %d", res);
+	// ft_printf("%   %", "test");
+	// ft_printf("%.0%");
+	// ft_printf( "%.3d", 10 );
+	ft_printf("%   %");
 }
 
 int		ft_printf(const char *input, ...)
@@ -65,6 +72,5 @@ int		ft_printf(const char *input, ...)
 		ft_strdel(&tmp);
 	ft_putstr(ft_strinsert("", "", 2));
 	va_end(ap);
-	return (ft_strlen(ft_strinsert("", "", 2)))
-	;
+	return (ft_strlen(ft_strinsert("", "", 2)));
 }

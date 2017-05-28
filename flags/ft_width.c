@@ -27,7 +27,7 @@ static int		ft_find_width(char *todo)
 	{
 		while ((todo[i] != '\0') && (todo[i] != '.'))
 			i--;
-		if ((todo[i] == '.') && (todo[i - 1] != '\0'))
+		if ((todo[i] == '.') && (i >= 1))
 			i--;
 	}
 	while (ft_isdigit((todo)[i]) == 1)
@@ -52,6 +52,8 @@ static int		ft_find_width(char *todo)
 		j = (ft_strlen(todo) - 2) - i + 1;
 		length = ft_strncpy(ft_strnew(j), &todo[i], j);
 		j = ft_atoi(length);
+		if (j < 0)
+			j = j * -1;
 		ft_strdel(&length);
 	}
 	return (j);
