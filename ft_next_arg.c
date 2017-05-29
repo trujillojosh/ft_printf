@@ -60,7 +60,7 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
 	else if ((c == 'u') || (c == 'U'))
 		return (ft_u(ap, str, specs));
 	else if (c == 'x')
-		return (ft_x(ap, str, specs));
+		return (ft_x(ap, str, find_precision(*todo)));
 	else if (c == 'X')
 		return (ft_up_x(ap, str, specs));
 	return (-1);
@@ -120,13 +120,13 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		{
 			return (-1);
 		}
-	if (prec >= 0)
+	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) -1] != 's'))
 		ft_precision(ft_strinsert("", "", 2), *todo, i, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
-	ft_hash(ft_strinsert("", "", 2), *todo, i); //had i = hash originally but didn't see the need
 	ft_0(ft_strinsert("", "", 2), *todo, i);
+	ft_hash(ft_strinsert("", "", 2), *todo, i); //had i = hash originally but didn't see the need
 	ft_minus(ft_strinsert("", "", 2), *todo, i);
 	*str = ft_strinsert(*str, "", 0);
 	return (1);

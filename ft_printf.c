@@ -42,7 +42,8 @@ int 	main(int argc, char **argv)
 	// ft_printf("%   %", "test");
 	// ft_printf("%.0%");
 	// ft_printf( "%.3d", 10 );
-	ft_printf("%#x", 42);
+	// ft_printf("@moulitest: %#.x %#.0x", 0, 0); //wtf is this supposed to do
+	ft_printf("%5.2s is a string", "");
 }
 
 int		ft_printf(const char *input, ...)

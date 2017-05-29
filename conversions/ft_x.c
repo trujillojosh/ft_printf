@@ -33,6 +33,8 @@ int		ft_x(va_list ap, char **s1, int spec) /* Unsigned hexadecimal integer */
 	// 	res = (unsigned int)va_arg(ap, size_t);
 	// else
 	res = va_arg(ap, void *);
+	if ((res == 0) && (spec == 0))
+		return (0);
 	tmp = ft_uitoa_base((unsigned int)res, 16);
 	while (tmp[i] != '\0')
 	{
