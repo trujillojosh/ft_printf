@@ -16,6 +16,7 @@ int 	main(int argc, char **argv)
 {
 	int 	c = 112698918;
 	unsigned int d = (unsigned int)c;
+	unsigned long e = 4294967296;
 	int a = 120;
 
 	int *b = &a;
@@ -43,7 +44,10 @@ int 	main(int argc, char **argv)
 	// ft_printf("%.0%");
 	// ft_printf( "%.3d", 10 );
 	// ft_printf("@moulitest: %#.x %#.0x", 0, 0); //wtf is this supposed to do
-	ft_printf("%5.2s is a string", "");
+	// ft_printf("%+ d", 42);
+	// ft_printf("%0+5d", 42);
+	// ft_printf("%05d", 42);
+	printf("%U", e);
 }
 
 int		ft_printf(const char *input, ...)

@@ -32,6 +32,7 @@ int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of 
 {
 	char	*tmp;
 	char 	*tmp2;
+	char 	*tmp3;
 	int 	i;
 
 	i = 0;
@@ -41,6 +42,11 @@ int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of 
 			return (0);
 		while (str[i] == ' ')
 			i++;
+		if ((str[i] == '+') || (str[i] == '-'))
+		{
+			tmp3 = ft_strnew(1);
+			tmp3[0] = str[i];
+		}
 		if ((opt == 1) && ((todo[ft_strlen(todo) - 1] == 'x') || (todo[ft_strlen(todo) - 1] == 'X')))
 		{
 			i += 2;
@@ -49,6 +55,14 @@ int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of 
 		}
 		else
 			tmp = ft_memset(ft_strnew(i), '0', i);
+		if ((str[i] == '+') || (str[i] == '-'))
+		{
+			tmp2 = ft_strjoin(tmp3, tmp);
+			tmp = ft_strdup(tmp2);
+			ft_strdel(&tmp3);
+			ft_strdel(&tmp2);
+			i++;
+		}
 		tmp2 = ft_strjoin(tmp, &str[i]);
 		ft_strdel(&tmp);
 		ft_strinsert(tmp2, "", 3);
