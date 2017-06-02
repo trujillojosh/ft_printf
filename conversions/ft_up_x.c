@@ -12,11 +12,15 @@
 
 #include "../ft_printf.h"
 
-int		ft_up_x(va_list ap, char **s1, int spec) /* Unsigned hexadecimal integer (uppercase) */ 
+int		ft_up_x(va_list ap, char **s1, char *todo) /* Unsigned hexadecimal integer (uppercase) */ 
 {
 	void	*res;
+	char 	*tmp;
 
 	res = va_arg(ap, void *);
-	*s1 = ft_strinsert(*s1, ft_uitoa_base((unsigned int)res, 16), 1);
+	tmp = ft_itoa_dispatch(res, todo, 16);
+	// *s1 = ft_strinsert(*s1, ft_uitoa_base((unsigned int)res, 16), 1);
+	*s1 = ft_strinsert(*s1, tmp, 16);
+	ft_strdel(&tmp);
 	return (0);
 }

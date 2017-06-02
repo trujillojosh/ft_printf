@@ -1,37 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_itoa_ll.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/13 16:46:28 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/23 17:48:02 by jtrujill         ###   ########.fr       */
+/*   Created: 2017/06/01 21:37:04 by jtrujill          #+#    #+#             */
+/*   Updated: 2017/06/01 21:37:05 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-char		*ft_uitoa_base(unsigned int value, int base)
+static size_t	ft_ll_len(long long nb)
 {
-	int		i;
+	size_t		i;
+
+	i = 0;
+	while ((nb / 10) != 0)
+	{
+		i++;
+		nb = nb / 10;
+	}
+	i++;
+	return (i);
+}
+
+char	*ft_itoa_ll(long long n)
+{
+	size_t	i;
 	char	*re;
 
-	i = 1;
-	if (base == 10)
-		return (ft_itoa_u(value));
-	i = ft_uint_len_ext(value, base);
-	re = (char *)malloc(sizeof(char) * (i + 1));
-	re[i] = '\0';
-	i--;
-	while (i >= 0)
+	i = ft_ll_len(n) - 1;
+	if (!(re = (char *)malloc(sizeof(char) * ft_ll_len(n) + 1)))
+		return (NULL);
+	re[i + 1] = '\0';
+	if (n < 0)
 	{
-		if ((value % base) > 9)
-			re[i] = (value % base) + 55;
-		else
-			re[i] = (value % base) + 48;
-		value = value / base;
-		i--;
+		re[0] = '-';
+		n = n * -1;
 	}
+	while (n > 9)
+	{
+		re[i] = (n % 10) + '0';
+		i--;
+		n = n / 10;
+	}
+	if (n >= 0 && n <= 9)
+		re[i] = n + '0';
 	return (re);
 }

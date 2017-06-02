@@ -12,13 +12,14 @@
 
 #include "../ft_printf.h"
 
-int		ft_o(va_list ap, char **s1, int spec) /* Type octal Integer */ 
+int		ft_o(va_list ap, char **s1, char *todo) /* Type octal Integer */ 
 {
 	void			*res;
 	char			*tmp;
 
 	res = va_arg(ap, void *);
-	tmp = ft_uitoa_base((unsigned int)res, 8);
+	tmp = ft_itoa_dispatch(res, todo, 8);
+	// tmp = ft_uitoa_base((unsigned int)res, 8);
 	*s1 = ft_strinsert(*s1, tmp, 1);
 	ft_strdel(&tmp);
 	return (0);

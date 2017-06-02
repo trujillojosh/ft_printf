@@ -14,11 +14,11 @@
 
 /* type decimal signed int, i conversion is same as d */ 
 
-int		ft_d(va_list ap, char **s1, int spec)
+int		ft_d(va_list ap, char **s1, char *todo)
 {
-	char	*digit;
+	void	*digit;
 
 	digit = va_arg(ap, void *);
-	*s1 = ft_strinsert(*s1, ft_itoa((unsigned int)digit), 1);
+	*s1 = ft_strinsert(*s1, ft_itoa_dispatch(digit, todo, 10), 1);
 	return (0);
 }

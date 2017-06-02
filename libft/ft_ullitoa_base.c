@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_ullitoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/13 16:46:28 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/23 17:48:02 by jtrujill         ###   ########.fr       */
+/*   Created: 2017/06/02 01:43:25 by jtrujill          #+#    #+#             */
+/*   Updated: 2017/06/02 01:43:27 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-char		*ft_uitoa_base(unsigned int value, int base)
+static int		ft_ullint_len_ext(unsigned long long nb, int base)
+{
+	int	i;
+
+	i = 0;
+	while ((nb / base) != 0)
+	{
+		i++;
+		nb = nb / base;
+	}
+	i++;
+	return (i);
+}
+
+char		*ft_ullitoa_base(unsigned long long value, int base)
 {
 	int		i;
 	char	*re;
 
 	i = 1;
 	if (base == 10)
-		return (ft_itoa_u(value));
-	i = ft_uint_len_ext(value, base);
+		return (ft_itoa_ull(value));
+	i = ft_ullint_len_ext(value, base);
 	re = (char *)malloc(sizeof(char) * (i + 1));
 	re[i] = '\0';
 	i--;

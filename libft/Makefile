@@ -6,7 +6,7 @@
 #    By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/07 12:03:23 by jtrujill          #+#    #+#              #
-#    Updated: 2017/04/21 15:55:13 by jtrujill         ###   ########.fr        #
+#    Updated: 2017/06/01 23:40:52 by jtrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,10 @@ SRCS = ft_strcmp.c ft_atoi.c ft_isdigit.c ft_isalpha.c ft_isalnum.c \
 	   ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_print_list.c \
 	   ft_lstsize.c get_next_line.c ft_char_count.c ft_print_hex.c \
 	   ft_itoa_base.c ft_int_len_ext.c ft_uint_len_ext.c \
-	   ft_uitoa_base.c ft_str_replace.c
+	   ft_uitoa_base.c ft_str_replace.c ft_itoa_t.c ft_itoa_l.c ft_itoa_ll.c \
+	   ft_itoa_s.c ft_itoa_ul.c ft_itoa_ull.c ft_itoa_us.c ft_itoa_m.c \
+	   ft_itoa_um.c ft_itoa_u.c ft_titoa_base.c ft_ulitoa_base.c \
+	   ft_ullitoa_base.c ft_usitoa_base.c ft_umitoa_base.c
 
 OBJS = ft_strcmp.o ft_atoi.o ft_isdigit.o ft_isalpha.o ft_isalnum.o \
 	   ft_isascii.o ft_isprint.o ft_putchar.o ft_putstr.o ft_putendl.o \
@@ -45,7 +48,10 @@ OBJS = ft_strcmp.o ft_atoi.o ft_isdigit.o ft_isalpha.o ft_isalnum.o \
 	   ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_print_list.o \
 	   ft_lstsize.o get_next_line.o ft_char_count.o ft_print_hex.o \
 	   ft_itoa_base.o ft_int_len_ext.o ft_uint_len_ext.o \
-	   ft_uitoa_base.o ft_str_replace.o
+	   ft_uitoa_base.o ft_str_replace.o ft_itoa_t.o ft_itoa_l.o ft_itoa_ll.o \
+	   ft_itoa_s.o ft_itoa_ul.o ft_itoa_ull.o ft_itoa_us.o ft_itoa_m.o \
+	   ft_itoa_um.o ft_itoa_u.o ft_titoa_base.o ft_ulitoa_base.o \
+	   ft_ullitoa_base.o ft_usitoa_base.o ft_umitoa_base.o
 
 all: $(NAME)
 

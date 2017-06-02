@@ -21,23 +21,17 @@ int		ft_printf(const char *input, ...)__attribute__((format(printf,1,2)));
 int		ft_plus(char *str, char *todo, int start);
 int		ft_minus(char *str, char *todo, int opt);
 int		ft_0(char *str, char *todo, int opt);
-int		ft_h(char **s1);
 int		ft_hash(char *str, char *todo, int start);
-int		ft_hh(char **s1);
-int		ft_j(char **s1);
-int		ft_l(char **s1);
-int		ft_ll(char **s1);
 int		ft_space(char *str, char *todo, int start);
-int		ft_z(char **s1);
 
-int		ft_up_x(va_list ap, char **s1, int spec);
+int		ft_up_x(va_list ap, char **s1, char *todo);
 int		ft_c(va_list ap, char **s1, int spec);
-int		ft_d(va_list ap, char **s1, int spec);
-int		ft_o(va_list ap, char **s1, int spec);
+int		ft_d(va_list ap, char **s1, char *todo);
+int		ft_o(va_list ap, char **s1, char *todo);
 int		ft_p(va_list ap, char **s1);
 int		ft_s(va_list ap, char **s1, int pres, int spec);
-int		ft_u(va_list ap, char **s1, int spec);
-int		ft_x(va_list ap, char **s1, int spec);
+int		ft_u(va_list ap, char **s1, char *todo);
+int		ft_x(va_list ap, char **s1, char *todo);
 int 	ft_percent(char **s1);
 
 int		ft_next_arg(va_list ap, char **str, int i);
@@ -144,4 +138,6 @@ int					ft_int_len_ext(int nb, int base);
 char				*ft_uitoa_base(unsigned int value, int base);
 int					ft_uint_len_ext(unsigned int nb, int base);
 void				ft_str_replace(char **old, char *new);
+char 				*ft_itoa_dispatch(void *nb, char *todo, int base);
+
 #endif

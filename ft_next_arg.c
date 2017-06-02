@@ -48,7 +48,7 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
 	if ((c == 's') || c == 'S')
 		return (ft_s(ap, str, -1, specs));
 	else if ((c == 'd') || (c == 'i') || (c == 'D'))
-		return (ft_d(ap, str, specs));
+		return (ft_d(ap, str, *todo));
 	else if ((c == 'c') || (c == 'C'))
 		return (ft_c(ap, str, specs));
 	else if (c == '%')
@@ -56,13 +56,13 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
 	else if (c == 'p')
 		return (ft_p(ap, str));
 	else if ((c == 'o') || (c == 'O'))
-		return (ft_o(ap, str, specs));
+		return (ft_o(ap, str, *todo));
 	else if ((c == 'u') || (c == 'U'))
-		return (ft_u(ap, str, specs));
+		return (ft_u(ap, str, *todo));
 	else if (c == 'x')
-		return (ft_x(ap, str, find_precision(*todo)));
+		return (ft_x(ap, str, *todo));
 	else if (c == 'X')
-		return (ft_up_x(ap, str, specs));
+		return (ft_up_x(ap, str, *todo));
 	return (-1);
 }
 
