@@ -43,6 +43,8 @@ int 	ft_width(char *str, char *todo, int start);
 char	*ft_remove_todo(char *todo, char *remove);
 int 	find_precision(char *todo);
 int		ft_precision(char *str, char *todo, int start, int prec);
+char 	*ft_itoa_dispatch(void *nb, char *todo, int base);
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -138,6 +140,5 @@ int					ft_int_len_ext(int nb, int base);
 char				*ft_uitoa_base(unsigned int value, int base);
 int					ft_uint_len_ext(unsigned int nb, int base);
 void				ft_str_replace(char **old, char *new);
-char 				*ft_itoa_dispatch(void *nb, char *todo, int base);
 
 #endif

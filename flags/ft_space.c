@@ -14,7 +14,7 @@
 
 static int ft_space_valid(char c)
 {
-	if ((c == 'd') || (c == 'i') || (c == 'o') || (c == 'u') || (c == 'x') \
+	if ((c == 'd') || (c == 'i') || (c == 'o') || (c == 'x') \
 		|| (c == 'p'))
 		return (1);
 	else

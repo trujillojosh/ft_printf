@@ -47,7 +47,9 @@ int 	main(int argc, char **argv)
 	// ft_printf("%+ d", 42);
 	// ft_printf("%0+5d", 42);
 	// ft_printf("%05d", 42);
-	printf("%ld", 4294967296);
+ 	// ft_printf("%lld", 9223372036854775807);
+ 	ft_printf("% u", 4294967295);
+
 }
 
 int		ft_printf(const char *input, ...)
