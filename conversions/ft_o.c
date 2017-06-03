@@ -12,12 +12,40 @@
 
 #include "../ft_printf.h"
 
+static int	ft_zeroprec_o(void *data, char *todo)
+{
+	if (data == NULL)
+	{
+		while ((*todo != '.') && (*todo != '\0'))
+			todo++;
+		if ((*todo == '.') && (*(todo + 1) != '\0'))
+		{
+			if ((*(todo + 1) == 'o') || (*(todo + 1) == '0'))
+			{
+				if (ft_isdigit(*(todo - 1)) == 1)
+					return (1);
+				else
+					return (-1);
+			}
+		}
+	}
+	return (0);
+}
+
 int		ft_o(va_list ap, char **s1, char *todo) /* Type octal Integer */ 
 {
 	void			*res;
 	char			*tmp;
 
 	res = va_arg(ap, void *);
+	todo[ft_strlen(todo) - 1] = 'o';
+	if (ft_zeroprec_o(res, todo) == 1)
+	{
+		*s1 = ft_strinsert(*s1, " ", 1);
+		return (0);
+	}
+	else if (ft_zeroprec_o(res, todo) == -1)
+		return (0);
 	tmp = ft_itoa_dispatch(res, todo, 8);
 	// tmp = ft_uitoa_base((unsigned int)res, 8);
 	*s1 = ft_strinsert(*s1, tmp, 1);

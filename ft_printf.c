@@ -48,8 +48,13 @@ int 	main(int argc, char **argv)
 	// ft_printf("%0+5d", 42);
 	// ft_printf("%05d", 42);
  	// ft_printf("%lld", 9223372036854775807);
- 	ft_printf("% u", 4294967295);
-
+ 	// ft_printf("% u", 4294967295);
+ 	// ft_printf("%5.d %5.0d", 0, 0);
+ 	// ft_printf("%5%");
+ 	// int u = printf("|%2c|", 0);
+ 	// printf("\nu is %d", u);
+ 	ft_printf("%s\n%8s\n%15s\n%s\n%5s\n%6s\n%10s\n", "Fuck", "This", "Project", "I", "need", "a", "beer");
+ 	// ft_printf("@moulitest: %.o %.0o", 0, 0);
 }
 
 int		ft_printf(const char *input, ...)
@@ -77,8 +82,7 @@ int		ft_printf(const char *input, ...)
 	}
 	if (tmp)
 		ft_strdel(&tmp);
-	ft_putstr(ft_strinsert("", "", 2));
 	va_end(ap);
-	i = ft_strlen(ft_strinsert("", "", 2));
+	ft_putstr(ft_strinsert("", "", 2));
 	return (ft_strlen(ft_strinsert("", "", 2)));
 }

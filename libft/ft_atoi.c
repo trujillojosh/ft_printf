@@ -23,7 +23,7 @@ int		ft_atoi(const char *s)
 	str = (unsigned char *)s;
 	if (*str == '\0')
 		return (0);
-	while (*str < 33)
+	while ((*str < 33) && (*str != '\0'))
 		str++;
 	if ((*str == '-') || (*str == '+'))
 	{

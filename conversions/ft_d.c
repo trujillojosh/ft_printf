@@ -13,12 +13,35 @@
 #include "../ft_printf.h"
 
 /* type decimal signed int, i conversion is same as d */ 
+static int	ft_zeroprec_d(void *data, char *todo)
+{
+	if (data == NULL)
+	{
+		while ((*todo != '.') && (*todo != '\0'))
+			todo++;
+		if ((*todo == '.') && (*(todo + 1) != '\0'))
+		{
+			if ((*(todo + 1) == 'd') || (*(todo + 1) == '0'))
+			{
+				if (ft_isdigit(*(todo - 1)) == 1)
+					return (1);
+			}
+		}
+	}
+	return (0);
+}
 
 int		ft_d(va_list ap, char **s1, char *todo)
 {
 	void	*digit;
 
 	digit = va_arg(ap, void *);
+	todo[ft_strlen(todo) - 1] = 'd';
+	if (ft_zeroprec_d(digit, todo) == 1)
+	{
+		*s1 = ft_strinsert(*s1, " ", 1);
+		return (0);
+	}
 	*s1 = ft_strinsert(*s1, ft_itoa_dispatch(digit, todo, 10), 1);
 	return (0);
 }
