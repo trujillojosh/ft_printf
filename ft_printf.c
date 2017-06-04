@@ -55,7 +55,9 @@ int 	main(int argc, char **argv)
  	// printf("\nu is %d", u);
  	// ft_printf("%s\n%8s\n%15s\n%s\n%5s\n%6s\n%10s\n", "Fuck", "This", "Project", "I", "need", "a", "beer");
  	// ft_printf("@moulitest: %#.o %#.0o", 0, 0);
- 	ft_printf("@moulitest: %#.x %#.0x", 0, 0);
+ 	// ft_printf("@moulitest: %#.x %#.0x", 0, 0);
+ 	// ft_printf("%03.2d", 0);
+ 	ft_printf("%010x", 542);
 }
 
 int		ft_printf(const char *input, ...)
