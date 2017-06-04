@@ -6,7 +6,7 @@
 #    By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 22:45:57 by jtrujill          #+#    #+#              #
-#    Updated: 2017/06/04 03:22:57 by jtrujill         ###   ########.fr        #
+#    Updated: 2017/06/04 03:27:08 by jtrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,10 @@ INC = -I includes/ft_printf.h
 FLAGS = gcc -c
 #-Wall -Wextra -Werror#
 
-MP = src/
-CP = src/conversions/
-SP = src/flags/
-LP = src/libft/
+MP = srcs/
+CP = srcs/conversions/
+SP = srcs/flags/
+LP = srcs/libft/
 
 MAIN = $(MP)ft_is_over.c $(MP)ft_itoa_dispatch.c $(MP)ft_next_arg.c \
 	   $(MP)ft_printf.c $(MP)ft_remove_todo.c $(MP)ft_strinsert.c
