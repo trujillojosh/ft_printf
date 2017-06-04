@@ -12,7 +12,6 @@
 
 #include "../ft_printf.h"
 
-/* type decimal signed int, i conversion is same as d */ 
 static int	ft_zeroprec_d(void *data, char *todo)
 {
 	if (data == NULL)
@@ -25,6 +24,8 @@ static int	ft_zeroprec_d(void *data, char *todo)
 			{
 				if (ft_isdigit(*(todo - 1)) == 1)
 					return (1);
+				else
+					return (-1);
 			}
 		}
 	}
@@ -40,6 +41,11 @@ int		ft_d(va_list ap, char **s1, char *todo)
 	if (ft_zeroprec_d(digit, todo) == 1)
 	{
 		*s1 = ft_strinsert(*s1, " ", 1);
+		return (0);
+	}
+	else if (ft_zeroprec_d(digit, todo) == -1)
+	{
+		*s1 = ft_strinsert(*s1, "", 1);
 		return (0);
 	}
 	*s1 = ft_strinsert(*s1, ft_itoa_dispatch(digit, todo, 10), 1);

@@ -64,8 +64,6 @@ char		*ft_strinsert(char *s1, char *s2, int mode)
 		res[i++] = *s2++;
 	while (ft_is_over(*s1, 1))
 		s1++;
-	// while ((*s1 != '%') && (*s1 != '\0'))
-	// 	res[i++] = *s1++;
 	res[i] = '\0';
 	if (str)
 	{

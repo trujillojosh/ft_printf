@@ -103,9 +103,9 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	int 	prec;
 
 	i = 0;
-	ft_strinsert(*str, "", 0);
-	while ((**str != '%') && (**str != '\0'))
-		(*str)++;
+	*str = ft_strinsert(*str, "", 0);
+	// while ((**str != '%') && (**str != '\0'))
+	// 	(*str)++;
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	if ((prec = find_precision(*todo)) < -1) //-1 reps no precison

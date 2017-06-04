@@ -45,7 +45,10 @@ int		ft_o(va_list ap, char **s1, char *todo) /* Type octal Integer */
 		return (0);
 	}
 	else if (ft_zeroprec_o(res, todo) == -1)
+	{
+		*s1 = ft_strinsert(*s1, "", 1);
 		return (0);
+	}
 	tmp = ft_itoa_dispatch(res, todo, 8);
 	// tmp = ft_uitoa_base((unsigned int)res, 8);
 	*s1 = ft_strinsert(*s1, tmp, 1);
