@@ -18,11 +18,11 @@ char	*ft_itoa(int n)
 	char	*re;
 
 	i = ft_int_len(n) - 1;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (!(re = (char *)malloc(sizeof(char) * ft_int_len(n) + 1)))
 		return (NULL);
 	re[i + 1] = '\0';
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		re[0] = '-';

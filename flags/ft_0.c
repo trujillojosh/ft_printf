@@ -28,7 +28,7 @@ static int ft_0_valid(char *todo)
 	return (0);
 }
 
-int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of spaces */
+int		ft_0(char *str, char *todo, int opt, int prec) /* Left pads # with zeroes isntead of spaces */
 {
 	char	*tmp;
 	char 	*tmp2;
@@ -65,6 +65,17 @@ int		ft_0(char *str, char *todo, int opt) /* Left pads # with zeroes isntead of 
 		}
 		tmp2 = ft_strjoin(tmp, &str[i]);
 		ft_strdel(&tmp);
+		i = 0;
+		while ((ft_char_count(tmp2, '0') >= prec) && (prec > 0) && (tmp2[i] != '\0'))
+		{
+			if ((ft_isdigit(tmp2[i]) == 1) && (tmp2[i] != '0'))
+				break ;
+			else if (((ft_char_count(tmp2, '0') - 1) == 1) && (tmp2[ft_strlen(tmp2) - 1] == '0'))
+				break ;
+			if (tmp2[i] == '0')
+				tmp2[i] = ' ';
+			i++;
+		}
 		ft_strinsert(tmp2, "", 3);
 		ft_strdel(&tmp2);
 	}

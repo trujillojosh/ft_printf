@@ -20,7 +20,7 @@
 int		ft_printf(const char *input, ...)__attribute__((format(printf,1,2)));
 int		ft_plus(char *str, char *todo, int start);
 int		ft_minus(char *str, char *todo, int opt);
-int		ft_0(char *str, char *todo, int opt);
+int		ft_0(char *str, char *todo, int opt, int prec);
 int		ft_hash(char *str, char *todo, int start);
 int		ft_space(char *str, char *todo, int start);
 
@@ -39,7 +39,7 @@ static char	*ft_find_type(char *str);
 // int 	main(int argc, char **argv);
 char	*ft_strinsert(char *s1, char *s2, int mode);
 int 	ft_is_over(char c, int mode);
-int 	ft_width(char *str, char *todo, int start);
+int 	ft_width(char *str, char *todo, int start, int empty);
 char	*ft_remove_todo(char *todo, char *remove);
 int 	find_precision(char *todo);
 int		ft_precision(char *str, char *todo, int start, int prec);

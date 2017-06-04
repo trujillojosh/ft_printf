@@ -47,6 +47,11 @@ int		ft_precision(char *str, char *todo, int start, int prec)
 	// 	prec++; //why did i do this?
 	if (prec > 0)
 	{
+			if ((str[start] == '+') || (str[start] == '-'))
+			{
+				start++;
+				prec++;
+			}
 			if (start > 0)
 			{
 				tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);

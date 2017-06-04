@@ -19,5 +19,7 @@ int		ft_c(va_list ap, char **s1, int spec)/* character type */
 	a[0] = va_arg(ap, int);
 	a[1] = '\0';
 	*s1 = ft_strinsert(*s1, a, 1);
+	if (a[0] == '\0')
+		return (1);
 	return (0);
 }

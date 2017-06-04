@@ -59,7 +59,7 @@ static int		ft_find_width(char *todo)
 	return (j);
 }
 
-int		ft_width(char *str, char *todo, int start)
+int		ft_width(char *str, char *todo, int start, int empty)
 {
 	int		width;
 	char	*tmp;
@@ -69,6 +69,8 @@ int		ft_width(char *str, char *todo, int start)
 	width = ft_find_width(todo) - (int)ft_strlen(&str[start]);
 	if (str[ft_strlen(&str[start]) - 1] == '\n')
 		width++;
+	if (empty == 1)
+		width--;
 	if (width > 0)
 	{
 		if ((ft_char_count(todo, ' ') > 0) || (ft_char_count(todo, '+') > 0))

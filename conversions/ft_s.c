@@ -18,7 +18,12 @@ int		ft_s(va_list ap, char **s1, int prec, int spec) /* type string */
 	char 	*tmp;
 
 	var = va_arg(ap, char *);
-	if ((ft_strlen(var) > prec) && (prec != -1))
+	if (!var)
+	{
+		*s1 = ft_strinsert(*s1, "(null)", 1);
+		return (0);
+	}
+	else if ((ft_strlen(var) > prec) && (prec != -1))
 	{
 		tmp = ft_strnew(ft_strlen(var));
 		tmp = ft_strncpy(tmp, var, prec);

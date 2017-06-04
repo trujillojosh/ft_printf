@@ -32,6 +32,8 @@ char	*ft_itoa_ll(long long n)
 	char	*re;
 
 	i = ft_ll_len(n) - 1;
+	if ((n + 1) == -9223372036854775807)
+		return(ft_strdup("-9223372036854775808"));
 	if (!(re = (char *)malloc(sizeof(char) * ft_ll_len(n) + 1)))
 		return (NULL);
 	re[i + 1] = '\0';

@@ -100,48 +100,61 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
 	int 	j;
+	int 	k;
 	int 	prec;
 
 	i = 0;
+	k = 0;
 	*str = ft_strinsert(*str, "", 0);
 	// while ((**str != '%') && (**str != '\0'))
 	// 	(*str)++;
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
-	if ((prec = find_precision(*todo)) < -1) //-1 reps no precison
-		return (-1);
+	prec = find_precision(*todo);//-1 reps no precison
 	j = ft_specs(*todo);
 	if (ft_strlen(*todo) == 0)
 		return (0);
 	else if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
 		ft_s(ap, str, prec, j);
 	else
-		if (ft_dispatch(ap, todo, str, j) < 0)
-		{
+	{
+		k = ft_dispatch(ap, todo, str, j);
+		if (k < 0)
 			return (-1);
-		}
+	}
+		// if (ft_dispatch(ap, todo, str, j) < 0)
+		// {
+		// 	return (-1);
+		// }
 	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) -1] != 's'))
 		ft_precision(ft_strinsert("", "", 2), *todo, i, prec);
-	ft_width(ft_strinsert("", "", 2), *todo, i);
+	ft_width(ft_strinsert("", "", 2), *todo, i, k);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
-	ft_0(ft_strinsert("", "", 2), *todo, i);
+	ft_0(ft_strinsert("", "", 2), *todo, i, prec);
 	ft_hash(ft_strinsert("", "", 2), *todo, i); //had i = hash originally but didn't see the need
 	ft_minus(ft_strinsert("", "", 2), *todo, i);
 	*str = ft_strinsert(*str, "", 0);
-	return (1);
+	return (k);
 }
 
 int			ft_next_arg(va_list ap, char **str, int i)
 {
 	char	*type;
+	int 	res;
 	
 	type = ft_find_type(*str);
-	if (ft_flags(ap, &type, str) < 0)
+	res = ft_flags(ap, &type, str);
+	if (res < 0)
 	{
 		ft_strdel(&type);
 		return (-1);
 	}
+	// if (ft_flags(ap, &type, str) < 0)
+	// {
+	// 	ft_strdel(&type);
+	// 	return (-1);
+	// }
 	ft_strdel(&type);
-	return (0);
+	return (res);
 }
