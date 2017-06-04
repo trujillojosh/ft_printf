@@ -6,11 +6,12 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 16:00:16 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/05/11 16:00:19 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/04 03:24:04 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
+#include "stdio.h"
 
 int 	main(int argc, char **argv)
 {
