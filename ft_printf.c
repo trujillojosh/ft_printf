@@ -66,7 +66,8 @@ int 	main(int argc, char **argv)
 	// int res = ft_printf("@moulitest: %s", NULL);
 	// printf("\nres is %d", res);
 	// ft_printf("%hd", 32768);
-	ft_printf("%hhd", -128);
+	ft_printf("%hd", 32768);
+	printf("\n%hd", 32768);
 	// ft_printf("%lld", -9223372036854775808);
 }
 
@@ -98,10 +99,6 @@ int		ft_printf(const char *input, ...)
 		else if (j == 1)
 			k++;
 		i--;
-		// if (ft_next_arg(ap, &str, i) >= 0)
-		// 	i--;
-		// else
-		// 	break ;
 	}
 	if (tmp)
 		ft_strdel(&tmp);
