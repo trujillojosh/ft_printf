@@ -37,7 +37,7 @@ int 	find_precision(char *todo)
 	return (-1);
 }
 
-int		ft_precision(char *str, char *todo, int start, int prec)
+int		ft_precision(char *str, int start, int prec)
 {
 	char 	*tmp;
 	char 	*tmp2;

@@ -12,7 +12,7 @@
 
 #include "../../includes/ft_printf.h"
 
-int		ft_s(va_list ap, char **s1, int prec, int spec) /* type string */ 
+int		ft_s(va_list ap, char **s1, int prec) /* type string */ 
 {
 	char	*var;
 	char 	*tmp;
@@ -23,7 +23,7 @@ int		ft_s(va_list ap, char **s1, int prec, int spec) /* type string */
 		*s1 = ft_strinsert(*s1, "(null)", 1);
 		return (0);
 	}
-	else if ((ft_strlen(var) > prec) && (prec != -1))
+	else if (((int)ft_strlen(var) > prec) && (prec != -1))
 	{
 		tmp = ft_strnew(ft_strlen(var));
 		tmp = ft_strncpy(tmp, var, prec);

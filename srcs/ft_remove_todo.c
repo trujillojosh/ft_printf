@@ -29,7 +29,7 @@ char	*ft_remove_todo(char *todo, char *remove)
 		j++;
 	}
 	i += ft_strlen(remove);
-	while ((todo[i] != '\0') && (i < ft_strlen(todo)))
+	while ((todo[i] != '\0') && (i < (int)ft_strlen(todo)))
 	{
 		res[j] = todo[i];
 		j++;

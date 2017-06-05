@@ -37,7 +37,7 @@ static char 	*ft_find_type(char *str)
 	return (ret);
 }
 
-static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
+static int 	ft_dispatch(va_list ap, char **todo, char **str)
 {
 	char c;
 
@@ -46,11 +46,11 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
 	else
 		return (-1);
 	if ((c == 's') || c == 'S')
-		return (ft_s(ap, str, -1, specs));
+		return (ft_s(ap, str, -1));
 	else if ((c == 'd') || (c == 'i') || (c == 'D'))
 		return (ft_d(ap, str, *todo));
 	else if ((c == 'c') || (c == 'C'))
-		return (ft_c(ap, str, specs));
+		return (ft_c(ap, str));
 	else if (c == '%')
 		return (ft_percent(str));
 	else if (c == 'p')
@@ -66,40 +66,39 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str, int specs)
 	return (-1);
 }
 
-static int	ft_specs(char *tmp)
-{
-	int 	i;
+// static int	ft_specs(char *tmp)
+// {
+// 	int 	i;
 
-	i = 0;
-	if (ft_char_count(tmp, 'l') > 0)
-	{
-		while ((*tmp != '\0') && (*tmp != 'l'))
-			tmp++;
-		if ((*tmp == 'l') && (*(tmp + 1) == 'l'))
-			i = 4;
-		else
-			i = 3;
-	}
-	else if (ft_char_count(tmp, 'h') > 0)
-	{
-		while ((*tmp != '\0') && (*tmp != 'h'))
-			tmp++;
-		if ((*tmp == 'h') && (*(tmp + 1) == 'h'))
-			i = 2;
-		else
-			i = 1;
-	}
-	else if (ft_char_count(tmp, 'j') > 0)
-		i = 5;
-	else if (ft_char_count(tmp, 'z') > 0)
-		i = 6;
-	return (i);
-}
+// 	i = 0;
+// 	if (ft_char_count(tmp, 'l') > 0)
+// 	{
+// 		while ((*tmp != '\0') && (*tmp != 'l'))
+// 			tmp++;
+// 		if ((*tmp == 'l') && (*(tmp + 1) == 'l'))
+// 			i = 4;
+// 		else
+// 			i = 3;
+// 	}
+// 	else if (ft_char_count(tmp, 'h') > 0)
+// 	{
+// 		while ((*tmp != '\0') && (*tmp != 'h'))
+// 			tmp++;
+// 		if ((*tmp == 'h') && (*(tmp + 1) == 'h'))
+// 			i = 2;
+// 		else
+// 			i = 1;
+// 	}
+// 	else if (ft_char_count(tmp, 'j') > 0)
+// 		i = 5;
+// 	else if (ft_char_count(tmp, 'z') > 0)
+// 		i = 6;
+// 	return (i);
+// }
 
 static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
-	int 	j;
 	int 	k;
 	int 	prec;
 
@@ -111,14 +110,14 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	if (ft_strinsert("", "", 2))
 		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
 	prec = find_precision(*todo);//-1 reps no precison
-	j = ft_specs(*todo);
+	// j = ft_specs(*todo);
 	if (ft_strlen(*todo) == 0)
 		return (0);
 	else if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
-		ft_s(ap, str, prec, j);
+		ft_s(ap, str, prec);
 	else
 	{
-		k = ft_dispatch(ap, todo, str, j);
+		k = ft_dispatch(ap, todo, str);
 		if (k < 0)
 			return (-1);
 	}
@@ -127,7 +126,7 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		// 	return (-1);
 		// }
 	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) -1] != 's'))
-		ft_precision(ft_strinsert("", "", 2), *todo, i, prec);
+		ft_precision(ft_strinsert("", "", 2), i, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i, k);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
@@ -138,7 +137,7 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	return (k);
 }
 
-int			ft_next_arg(va_list ap, char **str, int i)
+int			ft_next_arg(va_list ap, char **str)
 {
 	char	*type;
 	int 	res;

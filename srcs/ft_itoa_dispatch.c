@@ -15,7 +15,6 @@
 char	*ft_itoa_dispatch(void *nb, char *todo, int base)
 {
 	char	c;
-	char	*res;
 
 	c = ft_tolower(todo[ft_strlen(todo) - 1]);
 	if (ft_char_count(todo, 'j') > 0)

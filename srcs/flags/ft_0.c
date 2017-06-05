@@ -17,6 +17,8 @@ static int ft_0_valid(char *todo)
 	int 	i;
 
 	i = 0;
+	if (ft_char_count(todo, ' ') > 0)
+		return (0);
 	while ((todo[i] != '0') && (todo[i] != '\0'))
 	{
 		if ((ft_isdigit(todo[i])) || (todo[i] == '.'))

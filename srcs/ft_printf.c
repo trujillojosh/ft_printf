@@ -34,7 +34,7 @@ int		ft_printf(const char *input, ...)
 	va_start(ap, input);
 	while (i > 0)
 	{
-		j = ft_next_arg(ap, &str, i);
+		j = ft_next_arg(ap, &str);
 		if (j < 0)
 			break ;
 		else if (j == 1)

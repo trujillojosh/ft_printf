@@ -47,7 +47,7 @@ static int		ft_find_width(char *todo)
 	{
 		if (i == -1)
 			i++;
-		if (((todo)[i] == '0') && ((i + 1) != (ft_strlen(todo) - 2)))
+		if (((todo)[i] == '0') && ((i + 1) != (int)(ft_strlen(todo) - 2)))
 			i++;
 		j = (ft_strlen(todo) - 2) - i + 1;
 		length = ft_strncpy(ft_strnew(j), &todo[i], j);

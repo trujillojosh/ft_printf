@@ -12,8 +12,7 @@
 
 NAME =  libftprintf.a
 INC = -I includes/ft_printf.h
-FLAGS = gcc -c
-#-Wall -Wextra -Werror#
+FLAGS = gcc -Wall -Wextra -Werror -c
 
 MP = srcs/
 CP = srcs/conversions/

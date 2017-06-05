@@ -12,7 +12,7 @@
 
 #include "../../includes/ft_printf.h"
 
-int		ft_c(va_list ap, char **s1, int spec)/* character type */ 
+int		ft_c(va_list ap, char **s1) /* character type */ 
 {
 	char 	a[2];
 

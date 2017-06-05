@@ -12,6 +12,7 @@
 
 #include "includes/ft_printf.h"
 #include "stdio.h"
+#include <limits.h>
 
 int 	main(int argc, char **argv)
 {
@@ -67,7 +68,18 @@ int 	main(int argc, char **argv)
 	// int res = ft_printf("@moulitest: %s", NULL);
 	// printf("\nres is %d", res);
 	// ft_printf("%hd", 32768);
-	ft_printf("%hd", 32768);
-	printf("\n%hd", 32768);
+	// ft_printf("%hd", 32768);
+	// printf("\n%hd", 32768);
+	// int j = ft_printf("%zd", LLONG_MAX);
+	// printf("\n");
+	// int k = printf("%zd", LLONG_MAX);
+	// printf("\nj is %d, k is %d", j, k);
+	// ft_printf("%hd", 32768);
+	// printf("\n");
+	// printf("%hd", 32768);
+	int j = ft_printf("111%s333", "222");
+	printf("\n");
+	int k = printf("111%s333", "222");
+	printf("\nj is %d, k is %d", j, k);
 	// ft_printf("%lld", -9223372036854775808);
 }
