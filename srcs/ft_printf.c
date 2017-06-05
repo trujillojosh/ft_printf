@@ -23,9 +23,9 @@ int		ft_printf(const char *input, ...)
 
 	i = ft_char_count((char *)input, '%');
 	k = 0;
-	write(1, ">>>", 3);
-	write(1, input, ft_strlen(input));
-	write(1, "\n", 1);
+	// write(1, ">>>", 3);
+	// write(1, input, ft_strlen(input));
+	// write(1, "\n", 1);
 	if (i == 0)
 	{
 		ft_putstr(input);
