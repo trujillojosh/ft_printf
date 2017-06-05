@@ -6,10 +6,11 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:46:21 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 22:46:25 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/04 23:17:51 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "../includes/ft_printf.h"
 
 int		ft_printf(const char *input, ...)
@@ -22,6 +23,7 @@ int		ft_printf(const char *input, ...)
 
 	i = ft_char_count((char *)input, '%');
 	k = 0;
+	printf(">> %s\n", input);
 	if (i == 0)
 	{
 		ft_putstr(input);
