@@ -84,9 +84,13 @@ int 	main(int argc, char **argv)
 	// ft_printf("%U", 4294967296);
 	// printf("\n%U", 4294967296);
 	// ft_printf("%lld", -9223372036854775808);
-	int j = ft_printf(" 1|%zd|1 ", LLONG_MAX);
-	j += ft_printf("\n 2|%zd|2 ", LLONG_MAX);
+	// int j = ft_printf(" 1|%zd|1 ", LLONG_MAX);
+	// j += ft_printf("\n 2|%zd|2 ", LLONG_MAX);
+	// printf("\n");
+	// int k = printf("%zd", LLONG_MAX);
+	// printf("\nj is %d, k is %d", j, k);
+	int i = ft_printf("%#o", 0);
 	printf("\n");
-	int k = printf("%zd", LLONG_MAX);
-	printf("\nj is %d, k is %d", j, k);
+	int k = printf("%#o", 0);
+	printf("\ni is %d, k is %d", i, k);
 }

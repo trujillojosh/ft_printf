@@ -88,9 +88,9 @@ OBJS = ft_is_over.o ft_itoa_dispatch.o ft_next_arg.o ft_printf.o \
 all: $(NAME)
 
 $(NAME):
-	$(FLAGS) $(SRCS) $(INC)
+	$(FLAGS) $(SRCS) $(INC) -g
 	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	ranlib $(NAME) -g
 
 clean:
 	/bin/rm -rf $(OBJS)
