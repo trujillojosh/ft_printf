@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:46:21 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/04 23:20:32 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/04 23:22:31 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int		ft_printf(const char *input, ...)
 
 	i = ft_char_count((char *)input, '%');
 	k = 0;
+	write(1 ">>>", 3);
 	write(1, input, ft_strlen(input));
+	write(1, "\n", 1);
 	if (i == 0)
 	{
 		ft_putstr(input);
