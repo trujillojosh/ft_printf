@@ -66,36 +66,6 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str)
 	return (-1);
 }
 
-// static int	ft_specs(char *tmp)
-// {
-// 	int 	i;
-
-// 	i = 0;
-// 	if (ft_char_count(tmp, 'l') > 0)
-// 	{
-// 		while ((*tmp != '\0') && (*tmp != 'l'))
-// 			tmp++;
-// 		if ((*tmp == 'l') && (*(tmp + 1) == 'l'))
-// 			i = 4;
-// 		else
-// 			i = 3;
-// 	}
-// 	else if (ft_char_count(tmp, 'h') > 0)
-// 	{
-// 		while ((*tmp != '\0') && (*tmp != 'h'))
-// 			tmp++;
-// 		if ((*tmp == 'h') && (*(tmp + 1) == 'h'))
-// 			i = 2;
-// 		else
-// 			i = 1;
-// 	}
-// 	else if (ft_char_count(tmp, 'j') > 0)
-// 		i = 5;
-// 	else if (ft_char_count(tmp, 'z') > 0)
-// 		i = 6;
-// 	return (i);
-// }
-
 static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
@@ -105,33 +75,21 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	i = 0;
 	k = 0;
 	*str = ft_strinsert(*str, "", 0);
-	// while ((**str != '%') && (**str != '\0'))
-	// 	(*str)++;
-	if (ft_strinsert("", "", 2))
-		i = ft_strlen(ft_strinsert("", "", 2)); //i == start
-	prec = find_precision(*todo);//-1 reps no precison
-	// j = ft_specs(*todo);
+	i = ft_strlen(ft_strinsert("", "", 2));
+	prec = find_precision(*todo);
 	if (ft_strlen(*todo) == 0)
 		return (0);
 	else if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
 		ft_s(ap, str, prec);
 	else
-	{
 		k = ft_dispatch(ap, todo, str);
-		if (k < 0)
-			return (-1);
-	}
-		// if (ft_dispatch(ap, todo, str, j) < 0)
-		// {
-		// 	return (-1);
-		// }
 	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) -1] != 's'))
 		ft_precision(ft_strinsert("", "", 2), i, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i, k);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
 	ft_0(ft_strinsert("", "", 2), *todo, i, prec);
-	ft_hash(ft_strinsert("", "", 2), *todo, i); //had i = hash originally but didn't see the need
+	ft_hash(ft_strinsert("", "", 2), *todo, i);
 	ft_minus(ft_strinsert("", "", 2), *todo, i);
 	*str = ft_strinsert(*str, "", 0);
 	return (k);
@@ -149,11 +107,6 @@ int			ft_next_arg(va_list ap, char **str)
 		ft_strdel(&type);
 		return (-1);
 	}
-	// if (ft_flags(ap, &type, str) < 0)
-	// {
-	// 	ft_strdel(&type);
-	// 	return (-1);
-	// }
 	ft_strdel(&type);
 	return (res);
 }

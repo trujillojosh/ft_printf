@@ -37,14 +37,35 @@ int 	find_precision(char *todo)
 	return (-1);
 }
 
-int		ft_precision(char *str, int start, int prec)
+static void	prec_helper(char *str, int start, int prec)
 {
 	char 	*tmp;
 	char 	*tmp2;
 	char 	*tmp3;
+
+	if (start > 0)
+	{
+		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
+		tmp3 = ft_memset(ft_strnew(prec), '0', prec);
+		tmp2 = ft_strjoin(tmp3, &str[start]);
+		ft_strdel(&tmp3);
+		tmp3 = ft_strjoin(tmp, tmp2);
+	}
+	else
+	{
+		tmp = ft_strdup(str);
+		tmp2 = ft_memset(ft_strnew(prec), '0', prec);
+		tmp3 = ft_strjoin(tmp2, tmp);
+	}
+	ft_strinsert(tmp3, "", 3);
+	ft_strdel(&tmp);
+	ft_strdel(&tmp2);
+	ft_strdel(&tmp3);
+}
+
+int		ft_precision(char *str, int start, int prec)
+{
 	prec -= (int)ft_strlen(&str[start]);
-	// if (str[ft_strlen(&str[start]) - 1] == '\n')
-	// 	prec++; //why did i do this?
 	if (prec > 0)
 	{
 			if ((str[start] == '+') || (str[start] == '-'))
@@ -52,28 +73,7 @@ int		ft_precision(char *str, int start, int prec)
 				start++;
 				prec++;
 			}
-			if (start > 0)
-			{
-				tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
-				tmp2 = ft_memset(ft_strnew(prec), '0', prec);
-				tmp3 = ft_strjoin(tmp2, &str[start]);
-				ft_strdel(&tmp2);
-				tmp2 = ft_strjoin(tmp, tmp3);
-				ft_strinsert(tmp2, "", 3);
-				ft_strdel(&tmp);
-				ft_strdel(&tmp2);
-				ft_strdel(&tmp3);
-			}
-			else
-			{
-				tmp = ft_strdup(str);
-				tmp2 = ft_memset(ft_strnew(prec), '0', prec);
-				tmp3 = ft_strjoin(tmp2, str);
-				ft_strinsert(tmp3, "", 3);
-				ft_strdel(&tmp);
-				ft_strdel(&tmp2);
-				ft_strdel(&tmp3);
-			}
+			prec_helper(str, start, prec);
 	}
 	return (0);
 }

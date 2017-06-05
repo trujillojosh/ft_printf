@@ -77,9 +77,16 @@ int 	main(int argc, char **argv)
 	// ft_printf("%hd", 32768);
 	// printf("\n");
 	// printf("%hd", 32768);
-	int j = ft_printf("111%s333", "222");
-	printf("\n");
-	int k = printf("111%s333", "222");
-	printf("\nj is %d, k is %d", j, k);
+	// int j = ft_printf("111%s333", "222");
+	// printf("\n");
+	// int k = printf("111%s333", "222");
+	// printf("\nj is %d, k is %d", j, k);
+	// ft_printf("%U", 4294967296);
+	// printf("\n%U", 4294967296);
 	// ft_printf("%lld", -9223372036854775808);
+	int j = ft_printf(" 1|%zd|1 ", LLONG_MAX);
+	j += ft_printf("\n 2|%zd|2 ", LLONG_MAX);
+	printf("\n");
+	int k = printf("%zd", LLONG_MAX);
+	printf("\nj is %d, k is %d", j, k);
 }

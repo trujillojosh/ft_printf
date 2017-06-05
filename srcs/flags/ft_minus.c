@@ -12,7 +12,7 @@
 
 #include "../../includes/ft_printf.h"
 
-int		ft_minus(char *str, char *todo, int opt) /* Left-justify within given field width, right justification is default */
+int		ft_minus(char *str, char *todo, int opt)
 {
 	char	*tmp;
 	char	*tmp2;

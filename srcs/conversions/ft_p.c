@@ -12,7 +12,7 @@
 
 #include "../../includes/ft_printf.h"
 
-int		ft_p(va_list ap, char **s1) /* type pointer? */ 
+int		ft_p(va_list ap, char **s1) /* type pointer */ 
 {
 	void	*data;
 	char	*res;

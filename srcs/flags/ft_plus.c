@@ -29,7 +29,6 @@ int		ft_plus(char *str, char *todo, int start) /* Forces a '+' or '-' sign on nu
 			return (0);
 		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
 		tmp2 = ft_strdup(&str[start]);
-		// tmp2 = ft_strncpy(ft_strnew(ft_strlen(&str[start]) - 1), (const char *)&str[start], (ft_strlen(&str[start]) - 2));
 		tmp3 = ft_strjoin("+", tmp2);
 		ft_strdel(&tmp2);
 		tmp2 = ft_strjoin(tmp, tmp3);

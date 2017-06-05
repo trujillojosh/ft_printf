@@ -19,10 +19,8 @@ int		ft_printf(const char *input, ...)
 	int 		j;
 	int 		k;
 	char 		*str;
-	char 		*tmp;
 
 	i = ft_char_count((char *)input, '%');
-	j = 0;
 	k = 0;
 	if (i == 0)
 	{
@@ -30,20 +28,15 @@ int		ft_printf(const char *input, ...)
 		return (ft_strlen(input));
 	}
 	str = ft_strdup(input);
-	tmp = str;
 	va_start(ap, input);
-	while (i > 0)
+	while (i-- >= 0)
 	{
-		j = ft_next_arg(ap, &str);
-		if (j < 0)
-			break ;
-		else if (j == 1)
+		if (ft_next_arg(ap, &str) == 1)
 			k++;
-		i--;
 	}
-	if (tmp)
-		ft_strdel(&tmp);
 	va_end(ap);
 	ft_putstr(ft_strinsert("", "", 2));
-	return (ft_strlen(ft_strinsert("", "", 2)) + k);
+	j = ft_strlen(ft_strinsert("", "", 2)) + k;
+	ft_strinsert("", "", 4);
+	return (j);
 }
