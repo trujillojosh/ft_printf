@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_l.c                                        :+:      :+:    :+:   */
+/*   ft_ullitoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/01 21:36:04 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 21:36:08 by jtrujill         ###   ########.fr       */
+/*   Created: 2017/06/02 01:43:25 by jtrujill          #+#    #+#             */
+/*   Updated: 2017/06/02 01:43:27 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static size_t	ft_l_len(long nb)
+static int		ft_llint_ext(long long nb, long long base)
 {
-	size_t		i;
+	int	i;
 
 	i = 0;
 	if (nb < 0)
@@ -22,36 +22,35 @@ static size_t	ft_l_len(long nb)
 		nb = nb * -1;
 		i++;
 	}
-	while ((nb / 10) != 0)
+	while ((nb / base) != 0)
 	{
 		i++;
-		nb = nb / 10;
+		nb = nb / base;
 	}
 	i++;
 	return (i);
 }
 
-char	*ft_itoa_l(long n)
+char		*ft_llitoa_base(long long value, long long base)
 {
-	size_t	i;
+	int		i;
 	char	*re;
 
-	i = ft_l_len(n) - 1;
-	if (!(re = (char *)malloc(sizeof(char) * ft_l_len(n) + 1)))
-		return (NULL);
-	re[i + 1] = '\0';
-	if (n < 0)
+	i = 1;
+	if (base == 10) 
+		return (ft_itoa_ll(value));
+	i = ft_llint_ext(value, base);
+	re = (char *)malloc(sizeof(char) * (i + 1));
+	re[i] = '\0';
+	i--;
+	while (i >= 0)
 	{
-		re[0] = '-';
-		n = n * -1;
-	}
-	while (n > 9)
-	{
-		re[i] = (n % 10) + '0';
+		if ((value % base) > 9)
+			re[i] = (value % base) + 55;
+		else
+			re[i] = (value % base) + 48;
+		value = value / base;
 		i--;
-		n = n / 10;
 	}
-	if (n >= 0 && n <= 9)
-		re[i] = n + '0';
 	return (re);
 }

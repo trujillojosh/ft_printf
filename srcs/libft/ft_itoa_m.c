@@ -17,6 +17,11 @@ static size_t	ft_m_len(intmax_t nb)
 	size_t		i;
 
 	i = 0;
+	if (nb < 0)
+	{
+		nb = nb * -1;
+		i++;
+	}
 	while ((nb / 10) != 0)
 	{
 		i++;

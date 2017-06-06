@@ -123,5 +123,6 @@ char 				*ft_ulitoa_base(unsigned long value, int base);
 char 				*ft_ullitoa_base(unsigned long long value, int base);
 char 				*ft_umitoa_base(uintmax_t value, int base);
 char 				*ft_titoa_base(size_t value, int base);
+char				*ft_llitoa_base(long long value, long long base);
 
 #endif
