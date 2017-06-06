@@ -25,7 +25,7 @@ int		ft_hash(char *str, char *todo, int start)
 		while (str[start] == ' ')
 			start++;
 		i = ft_atoi(&str[start]);
-		if ((i == 0) && (ft_tolower(todo[ft_strlen(todo) - 1]) == 'x'))
+		if ((i == 0) && (ft_tolower(todo[ft_strlen(todo) - 1]) == 'o'))
 			return (0);
 		if ((todo[ft_strlen(todo) - 1] == 'o') && (str[0] == '0'))
 			return (0);
