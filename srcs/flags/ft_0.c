@@ -33,7 +33,7 @@ static int ft_0_valid(char *todo)
 	return (0);
 }
 
-static void	cases_0(char **str, int opt, int i, int start)
+static void	cases_0(char **str, int opt, int start)
 {
 	char 	*tmp;
 	char 	*tmp2;
@@ -120,7 +120,7 @@ int 		ft_0(char *str, char *todo, int start, int prec)
 	ft_strdel(&tmp);
 	ft_strdel(&tmp2);
 	tmp = ft_strjoin(tmp3, &str[i]);
-	cases_0(&tmp, opt, i, start);
+	cases_0(&tmp, opt, start);
 	prec_0(&tmp, prec, start);
 	ft_strinsert(tmp, "" , 3);
 	ft_strdel(&tmp);

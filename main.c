@@ -89,8 +89,8 @@ int 	main(int argc, char **argv)
 	// printf("\n");
 	// int k = printf("%zd", LLONG_MAX);
 	// printf("\nj is %d, k is %d", j, k);
-	int i = ft_printf("%%+04d 42 == %0+04d", 42);
+	int i = ft_printf("%020p", b);
 	printf("\n");
-	int k = printf("%%+04d 42 == %0+04d", 42);
+	int k = printf("%020p", b);
 	printf("\ni is %d, k is %d", i, k);
 }
