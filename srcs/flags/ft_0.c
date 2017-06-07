@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
+#include <stdio.h>
 
 static int ft_0_valid(char *todo)
 {
@@ -32,10 +33,11 @@ static int ft_0_valid(char *todo)
 	return (0);
 }
 
-static void	cases_0(char **str, int opt)
+static void	cases_0(char **str, int opt, int i, int start)
 {
 	char 	*tmp;
 	char 	*tmp2;
+	char 	*tmp3;
 
 	if (opt == 0)
 		return ;
@@ -47,11 +49,14 @@ static void	cases_0(char **str, int opt)
 		tmp = ft_strdup("0x");
 	else
 		tmp = ft_strdup("0X");
-	tmp2 = ft_strdup(*str);
+	printf("\nstart is %d, i is %d\n", start, i);
+	tmp3 = ft_strncpy(ft_strnew(start), *str, (start)); //str until new
+	tmp2 = ft_strjoin(tmp, (&(*str)[start])); //shit just put into str
 	ft_strdel(str);
-	*str = ft_strjoin(tmp, tmp2);
+	*str = ft_strjoin(tmp3, tmp2);
 	ft_strdel(&tmp);
 	ft_strdel(&tmp2);
+	ft_strdel(&tmp3);
 }
 
 static int 	get_opt(char *todo, char *str, int i)
@@ -116,7 +121,7 @@ int 		ft_0(char *str, char *todo, int start, int prec)
 	ft_strdel(&tmp);
 	ft_strdel(&tmp2);
 	tmp = ft_strjoin(tmp3, &str[i]);
-	cases_0(&tmp, opt);
+	cases_0(&tmp, opt, i, start);
 	prec_0(&tmp, prec, start);
 	ft_strinsert(tmp, "" , 3);
 	ft_strdel(&tmp);
