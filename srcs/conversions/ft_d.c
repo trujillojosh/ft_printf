@@ -37,7 +37,6 @@ int		ft_d(va_list ap, char **s1, char *todo)
 	void	*digit;
 
 	digit = va_arg(ap, void *);
-	todo[ft_strlen(todo) - 1] = 'd';
 	if (ft_zeroprec_d(digit, todo) == 1)
 	{
 		*s1 = ft_strinsert(*s1, " ", 1);

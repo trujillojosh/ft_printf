@@ -43,7 +43,10 @@ char	*ft_itoa_dispatch(void *nb, char *todo, int base)
 {
 	char	c;
 
-	c = ft_tolower(todo[ft_strlen(todo) - 1]);
+	c = todo[ft_strlen(todo) - 1];
+	if (c == 'D')
+		return (ft_itoa_ll((long long)nb));
+	c = ft_tolower(c);
 	// if ((c == 'd') || (c == 'i'))
 	// {
 	// 	if ((int)nb < 0)
