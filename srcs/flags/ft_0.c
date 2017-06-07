@@ -49,9 +49,8 @@ static void	cases_0(char **str, int opt, int i, int start)
 		tmp = ft_strdup("0x");
 	else
 		tmp = ft_strdup("0X");
-	printf("\nstart is %d, i is %d\n", start, i);
-	tmp3 = ft_strncpy(ft_strnew(start), *str, (start)); //str until new
-	tmp2 = ft_strjoin(tmp, (&(*str)[start])); //shit just put into str
+	tmp3 = ft_strncpy(ft_strnew(start), *str, (start));
+	tmp2 = ft_strjoin(tmp, (&(*str)[start]));
 	ft_strdel(str);
 	*str = ft_strjoin(tmp3, tmp2);
 	ft_strdel(&tmp);
