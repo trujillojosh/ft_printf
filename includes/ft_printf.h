@@ -18,7 +18,7 @@
 
 int		ft_printf(const char *input, ...);
 int		ft_plus(char *str, char *todo, int start);
-int		ft_minus(char *str, char *todo, int opt);
+int		ft_minus(char *str, int start);
 int		ft_0(char *str, char *todo, int start, int prec);
 int		ft_hash(char *str, char *todo, int start);
 int		ft_space(char *str, char *todo, int start);

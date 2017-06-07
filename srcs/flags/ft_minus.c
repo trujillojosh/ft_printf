@@ -12,45 +12,26 @@
 
 #include "../../includes/ft_printf.h"
 
-int		ft_minus(char *str, char *todo, int opt)
+int 		ft_minus(char *str, int start)
 {
-	char	*tmp;
-	char	*tmp2;
-	char 	*tmp3;
-	char 	c;
 	int 	i;
+	char 	*tmp;
+	char 	*tmp2;
+	char 	*tmp3;
 
-	i = 0;
-	if (ft_char_count(todo, '-') > 0)
-	{
-		if (opt == 2)
-		{
-			i++;
-			c = todo[ft_strlen(todo) - 1];
-			if ((c == 'x') || (c == 'X'))
-			{
-				tmp = ft_strncpy(ft_strnew(2), str, 2);
-				i++;
-			}
-			else
-				tmp = ft_strncpy(ft_strnew(1), str, 1);
-		}
-		else
-			tmp = NULL;
-		while (str[i] == ' ')
-			i++;
-		tmp2 = ft_memset(ft_strnew(i), ' ', i);
-		if (tmp)
-		{
-			tmp3 = ft_strjoin(tmp, &str[i]);
-			ft_strdel(&tmp);
-		}
-		else
-			tmp3 = ft_strdup(&str[i]);
-		tmp = ft_strjoin(tmp3, tmp2);
-		ft_strdel(&tmp2);
-		ft_strdel(&tmp3);
-		ft_strinsert(tmp, "", 3);
-	}
+	i = start;
+	while (str[i] == ' ')
+		i++;
+	if (i == 0)
+		return (0);
+	tmp = ft_strncpy(ft_strnew(start), str, start);
+	tmp2 = ft_memset(ft_strnew(i - start), ' ', (i - start));
+	tmp3 = ft_strjoin(&str[i], tmp2);
+	ft_strdel(&tmp2);
+	tmp2 = ft_strjoin(tmp, tmp3);
+	ft_strdel(&tmp);
+	ft_strinsert(tmp2, "", 3);
+	ft_strdel(&tmp3);
+	ft_strdel(&tmp2);
 	return (0);
 }

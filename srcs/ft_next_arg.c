@@ -90,7 +90,7 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 	ft_space(ft_strinsert("", "", 2), *todo, i);
 	ft_0(ft_strinsert("", "", 2), *todo, i, prec);
 	ft_hash(ft_strinsert("", "", 2), *todo, i);
-	ft_minus(ft_strinsert("", "", 2), *todo, i);
+	ft_minus(ft_strinsert("", "", 2), i);
 	*str = ft_strinsert(*str, "", 0);
 	return (k);
 }
