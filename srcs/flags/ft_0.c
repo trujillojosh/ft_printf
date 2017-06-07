@@ -80,21 +80,42 @@ static int 	get_opt(char *todo, char *str, int i)
 
 static void prec_0(char **str, int prec, int i)
 {
-	if ((prec <= 0) || (ft_strlen(*str) == 1))
-		return ;
-	while ((ft_char_count((&(*str)[i]), '0') >= prec) && ((*str)[i] != '\0'))
+	int 	j;
+	int 	k;
+
+	j = i;
+	while ((ft_isdigit((*str)[j]) == 1) && ((*str)[j] == '0'))
+		j++;
+	k = j;
+	while ((ft_isdigit((*str)[k]) == 1) && (ft_strlen(&(*str)[k]) > 1))
+		k++;
+	k = prec - (k - j);
+	while ((k > 0) && ((*str)[i] != '\0'))
 	{
-		if ((ft_isdigit((*str)[i]) == 1) && ((*str)[i] != '0'))
-			break ;
 		if ((*str)[i] == '0')
-		{
-			if (((*str)[i + 1] == '0') && (ft_strlen(&(*str)[i + 1]) == 1))
-				break ;
 			(*str)[i] = ' ';
-		}
+		else
+			break ;
+		k--;
 		i++;
 	}
+	// printf("\n\nj is %d, k is %d, i is %d, prec is %d\n\n", j, k, i, prec);
 }
+// 	if ((prec <= 0) || (ft_strlen(*str) == 1))
+// 		return ;
+// 	while ((ft_char_count((&(*str)[i]), '0') >= prec) && ((*str)[i] != '\0'))
+// 	{
+// 		if ((ft_isdigit((*str)[i]) == 1) && ((*str)[i] != '0'))
+// 			break ;
+// 		if ((*str)[i] == '0')
+// 		{
+// 			if (((*str)[i + 1] == '0') && (ft_strlen(&(*str)[i + 1]) == 1))
+// 				break ;
+// 			(*str)[i] = ' ';
+// 		}
+// 		i++;
+// 	}
+// }
 
 int 		ft_0(char *str, char *todo, int start, int prec)
 {
