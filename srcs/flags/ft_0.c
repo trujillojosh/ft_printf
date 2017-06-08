@@ -89,7 +89,9 @@ static void prec_0(char **str, int prec, int i)
 	k = j;
 	while ((ft_isdigit((*str)[k]) == 1) && (ft_strlen(&(*str)[k]) > 1))
 		k++;
-	k = prec - (k - j);
+	k = prec - (k - j) + 1;
+	if ((*str)[ft_strlen(*str) - 1] == '0')
+		k--;
 	while ((k > 0) && ((*str)[i] != '\0'))
 	{
 		if ((*str)[i] == '0')
