@@ -89,8 +89,8 @@ int 	main(int argc, char **argv)
 	// printf("\n");
 	// int k = printf("%zd", LLONG_MAX);
 	// printf("\nj is %d, k is %d", j, k);
-	int i = ft_printf("@moulitest: %#.o %#.0o", 0, 0);
+	int i = ft_printf("%hU", 4294967296);
 	printf("\n");
-	int k = printf("@moulitest: %#.o %#.0o", 0, 0);
+	int k = printf("%hU", 4294967296);
 	printf("\ni is %d, k is %d", i, k);
 }

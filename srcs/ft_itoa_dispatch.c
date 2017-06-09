@@ -47,14 +47,6 @@ char	*ft_itoa_dispatch(void *nb, char *todo, int base)
 	if (c == 'D')
 		return (ft_itoa_ll((long long)nb));
 	c = ft_tolower(c);
-	// if ((c == 'd') || (c == 'i'))
-	// {
-	// 	if ((int)nb < 0)
-	// 		return (ft_itoa((int)nb));
-	// 	return (ft_itoa_ll((long long)nb));
-	// }
-	// else
-	// 	return (ft_ullitoa_base((unsigned long long)nb, base));
 	if (ft_char_count(todo, 'j') > 0)
 	{
 		if ((c == 'd') || (c == 'i'))
