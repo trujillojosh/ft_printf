@@ -20,17 +20,20 @@ int		ft_hash(char *str, char *todo, int start)
 	char	*tmp3;
 
 	i = 0;
-	if (str[start] == '0')
-		return (0);
+	if ((str[start] == '0') || (str[start] == '\0'))
+	{
+		if (todo[ft_strlen(todo) - 1] != 'o')
+			return (0);
+	}
 	if (ft_char_count(todo, '#') > 0)
 	{
 		while (str[start] == ' ')
 			start++;
 		i = ft_atoi(&str[start]);
-		if ((i == 0) && (ft_tolower(todo[ft_strlen(todo) - 1]) == 'o'))
-			return (0);
-		if ((todo[ft_strlen(todo) - 1] == 'o') && (str[0] == '0'))
-			return (0);
+		// if ((i == 0) && (ft_tolower(todo[ft_strlen(todo) - 1]) == 'o'))
+		// 	return (0);
+		// if ((todo[ft_strlen(todo) - 1] == 'o') && (str[0] == '0'))
+		// 	return (0);
 		tmp = ft_strncpy(ft_strnew(start), (const char *)str, start);
 		tmp2 = ft_strncpy(ft_strnew(ft_strlen(&str[start])), (const char *)&str[start], (ft_strlen(&str[start])));
 		if (todo[ft_strlen(todo) - 1] == 'o')
