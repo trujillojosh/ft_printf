@@ -22,9 +22,9 @@ int		ft_printf(const char *input, ...)
 
 	i = ft_char_count((char *)input, '%');
 	k = 0;
-	ft_putstr("\n\ninput was: \"");
-	ft_putstr(input);
-	ft_putstr("\"\n\n");
+	// ft_putstr("\n\ninput was: \"");
+	// ft_putstr(input);
+	// ft_putstr("\"\n\n");
 	// write(1, ">>>", 3);
 	// write(1, input, ft_strlen(input));
 	// write(1, "\n", 1);
