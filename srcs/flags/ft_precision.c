@@ -66,6 +66,11 @@ static void	prec_helper(char *str, int start, int prec)
 int		ft_precision(char *str, int start, int prec)
 {
 	prec -= (int)ft_strlen(&str[start]);
+	if (prec == -1)
+	{
+		ft_strclr(&str[start]);
+		ft_strinsert(str, "", 3);
+	}
 	if (prec > 0)
 	{
 			if ((str[start] == '+') || (str[start] == '-'))
