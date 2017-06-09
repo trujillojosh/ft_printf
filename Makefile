@@ -90,7 +90,7 @@ all: $(NAME)
 $(NAME):
 	@$(FLAGS) $(SRCS) $(INC) -g
 	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME) -g
+	@ranlib $(NAME)
 
 clean:
 	@/bin/rm -rf $(OBJS)
