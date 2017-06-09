@@ -20,6 +20,8 @@ int		ft_hash(char *str, char *todo, int start)
 	char	*tmp3;
 
 	i = 0;
+	if (str[start] == '0')
+		return (0);
 	if (ft_char_count(todo, '#') > 0)
 	{
 		while (str[start] == ' ')
