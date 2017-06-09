@@ -42,8 +42,11 @@ int		ft_printf(const char *input, ...)
 			k++;
 	}
 	va_end(ap);
-	ft_putstr(ft_strinsert("", "", 2));
 	j = ft_strlen(ft_strinsert("", "", 2)) + k;
+	if ((j - k) == 0)
+		ft_putchar(0);
+	else
+		ft_putstr(ft_strinsert("", "", 2));
 	ft_strinsert("", "", 4);
 	return (j);
 }

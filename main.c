@@ -91,6 +91,6 @@ int 	main(int argc, char **argv)
 	// printf("\nj is %d, k is %d", j, k);
 	int i = ft_printf("%c", 0);
 	printf("\n");
-	int k = printf("%c", '\0');
+	int k = printf("%c", 0);
 	printf("\ni is %d, k is %d", i, k);
 }
