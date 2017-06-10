@@ -66,7 +66,7 @@ static void	prec_helper(char *str, int start, int prec)
 int		ft_precision(char *str, int start, char *todo, int prec)
 {
 	prec -= (int)ft_strlen(&str[start]);
-	if ((prec == -1) && (todo[ft_strlen(todo) - 1] != '%'))
+	if ((prec == -1) && (todo[ft_strlen(todo) - 1] != '%') && (ft_strlen(&str[start]) <= 1))
 	{
 		ft_strclr(&str[start]);
 		ft_strinsert(str, "", 3);

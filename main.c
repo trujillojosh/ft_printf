@@ -16,12 +16,12 @@
 
 int 	main(int argc, char **argv)
 {
-	int 	c = 112698918;
-	unsigned int d = (unsigned int)c;
-	unsigned long e = 4294967296;
-	int a = 120;
+	// int 	c = 112698918;
+	// unsigned int d = (unsigned int)c;
+	// unsigned long e = 4294967296;
+	// int a = 120;
 
-	int *b = &a;
+	// int *b = &a;
 	// printf("This is a test %o", a);
 	// printf("%050d", a);
 	// ft_printf("% -0d", 10);
@@ -89,8 +89,8 @@ int 	main(int argc, char **argv)
 	// printf("\n");
 	// int k = printf("%zd", LLONG_MAX);
 	// printf("\nj is %d, k is %d", j, k);
-	int i = ft_printf("%hhd", -129);
+	int i = ft_printf("%4.8d", 424242424);
 	printf("\n");
-	int k = printf("%hhd", -129);
+	int k = printf("%4.8d", 424242424);
 	printf("\ni is %d, k is %d", i, k);
 }

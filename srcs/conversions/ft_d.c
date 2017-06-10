@@ -35,6 +35,7 @@ static int	ft_zeroprec_d(void *data, char *todo)
 int		ft_d(va_list ap, char **s1, char *todo)
 {
 	void	*digit;
+	char 	*tmp;
 
 	digit = va_arg(ap, void *);
 	if (todo[ft_strlen(todo) - 1] == 'i')
@@ -49,6 +50,8 @@ int		ft_d(va_list ap, char **s1, char *todo)
 		*s1 = ft_strinsert(*s1, "", 1);
 		return (0);
 	}
-	*s1 = ft_strinsert(*s1, ft_itoa_dispatch(digit, todo, 10), 1);
+	tmp = ft_itoa_dispatch(digit, todo, 10);
+	*s1 = ft_strinsert(*s1, tmp, 1);
+	ft_strdel(&tmp);
 	return (0);
 }

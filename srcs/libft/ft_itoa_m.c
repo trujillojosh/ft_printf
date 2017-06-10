@@ -37,8 +37,7 @@ char	*ft_itoa_m(intmax_t n)
 	char	*re;
 
 	i = ft_m_len(n) - 1;
-	if (!(re = (char *)malloc(sizeof(char) * ft_m_len(n) + 1)))
-		return (NULL);
+	re = ft_strnew(ft_m_len(n) + 1);
 	re[i + 1] = '\0';
 	if (n < 0)
 	{
