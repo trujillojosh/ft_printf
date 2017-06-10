@@ -37,6 +37,8 @@ char	*ft_itoa_m(intmax_t n)
 	char	*re;
 
 	i = ft_m_len(n) - 1;
+	if ((n + 1) == -9223372036854775807)
+		return (ft_strdup("-9223372036854775808"));
 	re = ft_strnew(ft_m_len(n) + 1);
 	re[i + 1] = '\0';
 	if (n < 0)
