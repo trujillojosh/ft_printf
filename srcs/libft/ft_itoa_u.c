@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   ft_itoa_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:35:42 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 23:35:46 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:54:17 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_u_len(unsigned int nb)
 	return (i);
 }
 
-char	*ft_itoa_u(unsigned int n)
+char			*ft_itoa_u(unsigned int n)
 {
 	size_t	i;
 	char	*re;

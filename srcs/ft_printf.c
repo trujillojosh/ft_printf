@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:46:21 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/04 23:23:19 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:30:05 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int		ft_printf(const char *input, ...)
 {
-	va_list 	ap;
-	int 		i;
-	int 		j;
-	int 		k;
-	char 		*str;
+	va_list		ap;
+	int			i;
+	int			j;
+	int			k;
+	int 		l;
+	char		*str;
 
 	i = ft_char_count((char *)input, '%');
+	l = 0;
 	k = 0;
 	// ft_putstr("\n\ninput was: \"");
 	// ft_putstr(input);
@@ -37,8 +39,11 @@ int		ft_printf(const char *input, ...)
 	va_start(ap, input);
 	while (i-- >= 0)
 	{
-		if (ft_next_arg(ap, &str) == 1)
+		l = ft_next_arg(ap, &str);
+		if (l == 1)
 			k++;
+		else if (l == -1)
+			return (0);
 	}
 	va_end(ap);
 	j = ft_strlen(ft_strinsert("", "", 2)) + k;

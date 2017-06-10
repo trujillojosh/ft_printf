@@ -6,17 +6,37 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 17:44:26 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/26 23:31:13 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:51:48 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static char 	*ft_find_type(char *str)
+static int	type_check(char *type)
 {
-	int 	i;
-	int 	j;
-	char 	*ret;
+	char 	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = ft_strdup("*$L'");
+	while (type[i] != '\0')
+	{
+		if (ft_strchr(tmp, type[i]) != NULL)
+		{
+			ft_strdel(&tmp);
+			return (-1);
+		}
+		i++;
+	}
+	ft_strdel(&tmp);
+	return (0);
+}
+
+static char	*ft_find_type(char *str)
+{
+	int		i;
+	int		j;
+	char	*ret;
 
 	i = 0;
 	j = 0;
@@ -24,7 +44,7 @@ static char 	*ft_find_type(char *str)
 		str++;
 	if (*str == '%')
 		str++;
-	while(ft_is_over(str[i], 2))
+	while (ft_is_over(str[i], 2))
 		i++;
 	ret = ft_strnew(i + 1);
 	while (j < i)
@@ -37,9 +57,9 @@ static char 	*ft_find_type(char *str)
 	return (ret);
 }
 
-static int 	ft_dispatch(va_list ap, char **todo, char **str)
+static int	ft_dispatch(va_list ap, char **todo, char **str)
 {
-	char c;
+	char	c;
 
 	if (ft_strlen(*todo) > 0)
 		c = (*todo)[ft_strlen(*todo) - 1];
@@ -69,8 +89,8 @@ static int 	ft_dispatch(va_list ap, char **todo, char **str)
 static int	ft_flags(va_list ap, char **todo, char **str)
 {
 	int		i;
-	int 	k;
-	int 	prec;
+	int		k;
+	int		prec;
 
 	i = 0;
 	k = 0;
@@ -85,8 +105,8 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		k = ft_dispatch(ap, todo, str);
 	if (k < 0)
 		return (k);
-	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) -1] != 's'))
-		ft_precision(ft_strinsert("", "", 2), i, prec);
+	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) - 1] != 's'))
+		ft_precision(ft_strinsert("", "", 2), i, *todo, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i, k);
 	ft_plus(ft_strinsert("", "", 2), *todo, i);
 	ft_space(ft_strinsert("", "", 2), *todo, i);
@@ -100,9 +120,11 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 int			ft_next_arg(va_list ap, char **str)
 {
 	char	*type;
-	int 	res;
-	
+	int		res;
+
 	type = ft_find_type(*str);
+	if (type_check(type) < 0)
+		return (-1);
 	res = ft_flags(ap, &type, str);
 	if (res < 0)
 	{

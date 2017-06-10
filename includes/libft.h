@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 09:42:58 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 23:41:13 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:39:28 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int					ft_int_len_ext(int nb, int base);
 char				*ft_uitoa_base(unsigned int value, int base);
 int					ft_uint_len_ext(unsigned int nb, int base);
 void				ft_str_replace(char **old, char *new);
-char 				*ft_itoa_t(size_t n);
+char				*ft_itoa_t(size_t n);
 char				*ft_itoa_l(long n);
 char				*ft_itoa_ll(long long n);
 char				*ft_itoa_s(short n);
@@ -118,11 +118,11 @@ char				*ft_itoa_us(unsigned short n);
 char				*ft_itoa_m(intmax_t n);
 char				*ft_itoa_um(uintmax_t n);
 char				*ft_itoa_u(unsigned int n);
-char 				*ft_usitoa_base(unsigned short value, int base);
-char 				*ft_ulitoa_base(unsigned long value, int base);
-char 				*ft_ullitoa_base(unsigned long long value, int base);
-char 				*ft_umitoa_base(uintmax_t value, int base);
-char 				*ft_titoa_base(size_t value, int base);
+char				*ft_usitoa_base(unsigned short value, int base);
+char				*ft_ulitoa_base(unsigned long value, int base);
+char				*ft_ullitoa_base(unsigned long long value, int base);
+char				*ft_umitoa_base(uintmax_t value, int base);
+char				*ft_titoa_base(size_t value, int base);
 char				*ft_llitoa_base(long long value, long long base);
 
 #endif

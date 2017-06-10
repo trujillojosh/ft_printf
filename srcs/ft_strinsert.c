@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 17:10:15 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/11 17:18:12 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:38:27 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 /* mode 2 returns string stored in static string str */
 /* mode 3 replaces value of str with first param(s1) */
 
-static char *ft_helper(char *s1, char **str)
+static char	*ft_helper(char *s1, char **str)
 {
-	char 	*tmp;
-	char 	*res;
-	int 	i;
+	char	*tmp;
+	char	*res;
+	int		i;
 
 	i = 0;
 	res = ft_strnew(ft_strlen(s1));
@@ -41,7 +41,7 @@ static char *ft_helper(char *s1, char **str)
 	return (s1);
 }
 
-static char *ft_23(int mode, char **str, char **s1)
+static char	*ft_23(int mode, char **str, char **s1)
 {
 	if (mode == 0)
 		return (ft_helper(*s1, str));
@@ -64,11 +64,11 @@ static char *ft_23(int mode, char **str, char **s1)
 
 char		*ft_strinsert(char *s1, char *s2, int mode)
 {
-	static char 	*str;
+	static char		*str;
 	char			*res;
-	char 			*tmp;
+	char			*tmp;
 	int				i;
-	
+
 	i = 0;
 	if (mode != 1)
 		return (ft_23(mode, &str, &s1));

@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 15:06:21 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/24 15:24:24 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/09 16:28:33 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_remove_todo(char *todo, char *remove)
 {
 	char	*res;
-	int 	i;
+	int		i;
 	int		j;
-	
+
 	j = 0;
 	i = ft_strlen(todo) - 1;
 	res = ft_strnew(ft_strlen(todo) - ft_strlen(remove));

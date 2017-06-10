@@ -39,6 +39,7 @@ static char 	*ft_itoa_helper(void *nb, char *todo, int base, char c)
 		return (ft_ulitoa_base((unsigned long)nb, base));
 	}
 }
+
 char	*ft_itoa_dispatch(void *nb, char *todo, int base)
 {
 	char	c;
