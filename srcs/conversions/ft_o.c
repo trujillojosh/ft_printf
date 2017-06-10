@@ -49,7 +49,6 @@ int		ft_o(va_list ap, char **s1, char *todo) /* Type octal Integer */
 		*s1 = ft_strinsert(*s1, "", 1);
 		return (0);
 	}
-	// tmp = ft_itoa_dispatch(res, todo, 8);
 	tmp = ft_umitoa_base((uintmax_t)res, 8);
 	*s1 = ft_strinsert(*s1, tmp, 1);
 	ft_strdel(&tmp);

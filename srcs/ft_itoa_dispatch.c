@@ -159,7 +159,7 @@ char 	*ft_itoa_dispatch(void *nb, char *todo, int base)
 	else if (i == 5)
 		res = ft_umitoa_base((unsigned short)nb, base);
 	else if (i == 6)
-		res = ft_itoa_m((long)nb);
+		res = ft_itoa_um((long)nb);
 	else if (i == 7)
 		res = ft_umitoa_base((unsigned long)nb, base);
 	else if (i == 8)
