@@ -101,10 +101,11 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		return (0);
 	else if (ft_tolower((*todo)[ft_strlen(*todo) - 1]) == 's')
 		ft_s(ap, str, prec);
-	else
-		k = ft_dispatch(ap, todo, str);
-	if (k < 0)
+	else if ((k = ft_dispatch(ap, todo, str)) < 0)
 		return (k);
+		// k = ft_dispatch(ap, todo, str);
+	// if (k < 0)
+	// 	return (k);
 	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) - 1] != 's'))
 		ft_precision(ft_strinsert("", "", 2), i, *todo, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i, k);

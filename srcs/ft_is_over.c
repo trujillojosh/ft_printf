@@ -6,16 +6,16 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 16:32:33 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/18 16:32:37 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:07:48 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int 	ft_is_over(char c, int mode)
+int		ft_is_over(char c, int mode)
 {
-	char 		valid[16];
-	static int 	count = 0;
+	char		valid[16];
+	static int	count = 0;
 
 	ft_strcpy(valid, "sSpdDioOuUxXcC%");
 	if (count == -1)
