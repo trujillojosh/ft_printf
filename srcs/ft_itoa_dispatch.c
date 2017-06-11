@@ -174,7 +174,7 @@ char 	*ft_itoa_dispatch(void *nb, char *todo, int base)
 		res = ft_umitoa_base((size_t)nb, base);
 	if ((neg == 1) && (base == 10) && (res[0] != '-'))
 	{
-		if ((i == 1) || (i == 3) || (i == 5) || (i == 7) || (i == 9) || (i == 11))
+		if ((i == 1) || (i == 3) || (i == 5) || (i == 7) || (i == 9) || (i == 11) || (i == 12))
 			return (res);
 		tmp = ft_strjoin("-", res);
 		ft_strdel(&res);
