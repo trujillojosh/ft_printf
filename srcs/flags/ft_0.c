@@ -114,8 +114,6 @@ int			ft_0(char *str, char *todo, int start, int prec)
 	i = start;
 	while (str[i] == ' ')
 		i++;
-	// if (i == 0)
-	// 	return (0);
 	opt = get_opt(todo, str, i);
 	tmp = ft_memset(ft_strnew(i - start), '0', (i - start));
 	if ((opt == 1) || (opt == 2))

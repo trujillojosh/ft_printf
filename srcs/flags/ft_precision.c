@@ -29,7 +29,7 @@ int			find_precision(char *todo)
 		if (*todo == type)
 			return (0);
 		i = ft_atoi(todo);
-		if (ft_strchr("sSdDioOuUxX%", (int)type) != NULL)
+		if (ft_strchr("sSdDioOuUxX", (int)type) != NULL)
 			return (i);
 		else
 			return (-2);
