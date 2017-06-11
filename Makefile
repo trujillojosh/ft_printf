@@ -6,7 +6,7 @@
 #    By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 22:45:57 by jtrujill          #+#    #+#              #
-#    Updated: 2017/06/04 03:27:08 by jtrujill         ###   ########.fr        #
+#    Updated: 2017/06/10 20:26:14 by jtrujill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ OBJS = ft_is_over.o ft_itoa_dispatch.o ft_next_arg.o ft_printf.o \
 all: $(NAME)
 
 $(NAME):
-	@$(FLAGS) $(SRCS) $(INC) -g
+	@$(FLAGS) $(SRCS) $(INC)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
