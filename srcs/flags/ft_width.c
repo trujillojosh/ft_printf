@@ -6,16 +6,16 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 14:29:25 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/22 15:58:13 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:36:02 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static int 		find_helper(char *todo, int i)
+static int	find_helper(char *todo, int i)
 {
-	int 	j;
-	char 	*length;
+	int		j;
+	char	*length;
 
 	j = 0;
 	i == -1 ? i++ : 0;
@@ -29,7 +29,7 @@ static int 		find_helper(char *todo, int i)
 	return (j);
 }
 
-static int		ft_find_width(char *todo)
+static int	ft_find_width(char *todo)
 {
 	int		i;
 	int		j;
@@ -56,11 +56,11 @@ static int		ft_find_width(char *todo)
 	return (j);
 }
 
-static void width_helper(int width, int start, char *str)
+static void	width_helper(int width, int start, char *str)
 {
-	char *tmp;
-	char *tmp2;
-	char *tmp3;
+	char	*tmp;
+	char	*tmp2;
+	char	*tmp3;
 
 	if (start > 0)
 	{
@@ -76,14 +76,14 @@ static void width_helper(int width, int start, char *str)
 		tmp = ft_strdup(str);
 		tmp2 = ft_memset(ft_strnew(width), ' ', width);
 		tmp3 = ft_strjoin(tmp2, str);
-		ft_strinsert(tmp3, "", 3);	
+		ft_strinsert(tmp3, "", 3);
 	}
 	ft_strdel(&tmp);
 	ft_strdel(&tmp2);
 	ft_strdel(&tmp3);
 }
 
-int		ft_width(char *str, char *todo, int start, int empty)
+int			ft_width(char *str, char *todo, int start, int empty)
 {
 	int		width;
 
@@ -97,7 +97,8 @@ int		ft_width(char *str, char *todo, int start, int empty)
 		if (ft_char_count(todo, '#') > 0)
 		{
 			width--;
-			if ((todo[ft_strlen(todo) - 1] == 'x') || (todo[ft_strlen(todo) - 1] == 'X'))
+			if ((todo[ft_strlen(todo) - 1] == 'x') ||
+					(todo[ft_strlen(todo) - 1] == 'X'))
 				width--;
 		}
 		if (width > 0)

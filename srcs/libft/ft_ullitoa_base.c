@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/02 01:43:25 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/02 01:43:27 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:39:17 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		ft_ullint_len_ext(unsigned long long nb, int base)
 	return (i);
 }
 
-char		*ft_ullitoa_base(unsigned long long value, int base)
+char			*ft_ullitoa_base(unsigned long long value, int base)
 {
 	int		i;
 	char	*re;

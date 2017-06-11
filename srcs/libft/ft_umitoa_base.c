@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/02 01:43:37 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/02 01:43:41 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:43:24 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		ft_umint_len_ext(uintmax_t nb, int base)
 	return (i);
 }
 
-char		*ft_umitoa_base(uintmax_t value, int base)
+char			*ft_umitoa_base(uintmax_t value, int base)
 {
 	int		i;
 	char	*re;

@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 22:34:22 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 22:34:24 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:39:01 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_m_len(intmax_t nb)
 	return (i);
 }
 
-char	*ft_itoa_m(intmax_t n)
+char			*ft_itoa_m(intmax_t n)
 {
 	size_t	i;
 	char	*re;

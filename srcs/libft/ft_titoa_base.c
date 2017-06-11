@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/02 01:43:50 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/02 01:43:54 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:45:39 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		ft_tint_len_ext(size_t nb, int base)
 	return (i);
 }
 
-char		*ft_titoa_base(size_t value, int base)
+char			*ft_titoa_base(size_t value, int base)
 {
 	int		i;
 	char	*re;

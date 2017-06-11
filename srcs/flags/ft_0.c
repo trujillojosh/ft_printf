@@ -6,16 +6,15 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 23:01:23 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:01:27 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:34:04 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
-#include <stdio.h>
 
-static int ft_0_valid(char *todo)
+static int	ft_0_valid(char *todo)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	if (ft_char_count(todo, '0') == 0)
@@ -35,9 +34,9 @@ static int ft_0_valid(char *todo)
 
 static void	cases_0(char **str, int opt, int start)
 {
-	char 	*tmp;
-	char 	*tmp2;
-	char 	*tmp3;
+	char	*tmp;
+	char	*tmp2;
+	char	*tmp3;
 
 	if (opt == 0)
 		return ;
@@ -58,9 +57,9 @@ static void	cases_0(char **str, int opt, int start)
 	ft_strdel(&tmp3);
 }
 
-static int 	get_opt(char *todo, char *str, int i)
+static int	get_opt(char *todo, char *str, int i)
 {
-	char 	c;
+	char	c;
 
 	c = todo[ft_strlen(todo) - 1];
 	if (ft_char_count(todo, '#') > 0)
@@ -75,10 +74,9 @@ static int 	get_opt(char *todo, char *str, int i)
 	else if (str[i] == '-')
 		return (2);
 	return (0);
-
 }
 
-static void	prec_0(char **str, int prec, int start)
+static void	prec_0(char **str, int prec, int start, char **tmp)
 {
 	int i;
 	int k;
@@ -93,55 +91,20 @@ static void	prec_0(char **str, int prec, int start)
 		(*str)[k] = ' ';
 		k--;
 	}
+	ft_strinsert(*str, "", 3);
+	if (*str)
+		ft_strdel(str);
+	if (*tmp)
+		ft_strdel(tmp);
 }
-// static void prec_0(char **str, int prec, int i)
-// {
-// 	int 	j;
-// 	int 	k;
 
-// 	j = i;
-// 	while ((ft_isdigit((*str)[j]) == 1) && ((*str)[j] == '0'))
-// 		j++;
-// 	k = j;
-// 	while ((ft_isdigit((*str)[k]) == 1) && (ft_strlen(&(*str)[k]) > 1))
-// 		k++;
-// 	k = prec - (k - j);
-// 	if ((*str)[ft_strlen(*str) - 1] == '0')
-// 		k--;
-// 	while ((k > 0) && ((*str)[i] != '\0'))
-// 	{
-// 		if ((*str)[i] == '0')
-// 			(*str)[i] = ' ';
-// 		else
-// 			break ;
-// 		k--;
-// 		i++;
-// 	}
-// 	// printf("\n\nj is %d, k is %d, i is %d, prec is %d\n\n", j, k, i, prec);
-// }
-// 	if ((prec <= 0) || (ft_strlen(*str) == 1))
-// 		return ;
-// 	while ((ft_char_count((&(*str)[i]), '0') >= prec) && ((*str)[i] != '\0'))
-// 	{
-// 		if ((ft_isdigit((*str)[i]) == 1) && ((*str)[i] != '0'))
-// 			break ;
-// 		if ((*str)[i] == '0')
-// 		{
-// 			if (((*str)[i + 1] == '0') && (ft_strlen(&(*str)[i + 1]) == 1))
-// 				break ;
-// 			(*str)[i] = ' ';
-// 		}
-// 		i++;
-// 	}
-// }
-
-int 		ft_0(char *str, char *todo, int start, int prec)
+int			ft_0(char *str, char *todo, int start, int prec)
 {
-	int 	opt;
-	int 	i;
-	char 	*tmp;
-	char 	*tmp2;
-	char 	*tmp3;
+	int		opt;
+	int		i;
+	char	*tmp;
+	char	*tmp2;
+	char	*tmp3;
 
 	if (ft_0_valid(todo) == 0)
 		return (0);
@@ -160,9 +123,6 @@ int 		ft_0(char *str, char *todo, int start, int prec)
 	ft_strdel(&tmp2);
 	tmp = ft_strjoin(tmp3, &str[i]);
 	cases_0(&tmp, opt, start);
-	prec_0(&tmp, prec, start);
-	ft_strinsert(tmp, "" , 3);
-	ft_strdel(&tmp);
-	ft_strdel(&tmp3);
+	prec_0(&tmp, prec, start, &tmp3);
 	return (0);
 }

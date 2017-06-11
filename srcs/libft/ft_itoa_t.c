@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 19:36:18 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 19:55:30 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:45:19 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_t_len(size_t nb)
 	return (i);
 }
 
-char	*ft_itoa_t(size_t n)
+char			*ft_itoa_t(size_t n)
 {
 	size_t	i;
 	char	*re;
@@ -39,7 +39,7 @@ char	*ft_itoa_t(size_t n)
 	{
 		re[i] = (n % 10) + '0';
 		i--;
-		n = n /10;
+		n = n / 10;
 	}
 	if (n <= 9)
 		re[i] = n + '0';

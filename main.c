@@ -89,8 +89,8 @@ int 	main(int argc, char **argv)
 	// printf("\n");
 	// int k = printf("%zd", LLONG_MAX);
 	// printf("\nj is %d, k is %d", j, k);
-	int i = ft_printf("%o, %ho, %hho", -42, -42, -42);
+	int i = ft_printf("%zi", LLONG_MIN);
 	printf("\n");
-	int k = printf("%o, %ho, %hho", -42, -42, -42);
+	int k = printf("%zi", LLONG_MIN);
 	printf("\ni is %d, k is %d", i, k);
 }

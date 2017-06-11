@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 21:36:04 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 21:36:08 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:46:32 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_l_len(long nb)
 	return (i);
 }
 
-char	*ft_itoa_l(long n)
+char			*ft_itoa_l(long n)
 {
 	size_t	i;
 	char	*re;

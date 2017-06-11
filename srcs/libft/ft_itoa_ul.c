@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 21:36:41 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/01 21:36:43 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:43:08 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_ul_len(unsigned long nb)
 	return (i);
 }
 
-char	*ft_itoa_ul(unsigned long n)
+char			*ft_itoa_ul(unsigned long n)
 {
 	size_t	i;
 	char	*re;

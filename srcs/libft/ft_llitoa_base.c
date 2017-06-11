@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ullitoa_base.c                                  :+:      :+:    :+:   */
+/*   ft_llitoa_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/02 01:43:25 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/02 01:43:27 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 18:48:37 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static int		ft_llint_ext(long long nb, long long base)
+static int	ft_llint_ext(long long nb, long long base)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ char		*ft_llitoa_base(long long value, long long base)
 	char	*re;
 
 	i = 1;
-	if (base == 10) 
+	if (base == 10)
 		return (ft_itoa_ll(value));
 	i = ft_llint_ext(value, base);
 	re = (char *)malloc(sizeof(char) * (i + 1));
