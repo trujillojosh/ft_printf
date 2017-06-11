@@ -19,7 +19,7 @@ static int	ft_0_valid(char *todo)
 	i = 0;
 	if (ft_char_count(todo, '0') == 0)
 		return (0);
-	if ((ft_char_count(todo, ' ') > 0) || (ft_char_count(todo, '-') > 0))
+	if (ft_char_count(todo, '-') > 0)
 		return (0);
 	while ((todo[i] != '0') && (todo[i] != '\0'))
 	{
@@ -32,7 +32,7 @@ static int	ft_0_valid(char *todo)
 	return (0);
 }
 
-static void	cases_0(char **str, int opt, int start)
+static void	cases_0(char **str, int opt, int start, char **del)
 {
 	char	*tmp;
 	char	*tmp2;
@@ -55,6 +55,7 @@ static void	cases_0(char **str, int opt, int start)
 	ft_strdel(&tmp);
 	ft_strdel(&tmp2);
 	ft_strdel(&tmp3);
+	ft_strdel(del);
 }
 
 static int	get_opt(char *todo, char *str, int i)
@@ -108,11 +109,13 @@ int			ft_0(char *str, char *todo, int start, int prec)
 
 	if (ft_0_valid(todo) == 0)
 		return (0);
+	if ((str[start] == ' ') && (ft_char_count(todo, ' ') > 0))
+		start++;
 	i = start;
 	while (str[i] == ' ')
 		i++;
-	if (i == 0)
-		return (0);
+	// if (i == 0)
+	// 	return (0);
 	opt = get_opt(todo, str, i);
 	tmp = ft_memset(ft_strnew(i - start), '0', (i - start));
 	if ((opt == 1) || (opt == 2))
@@ -120,9 +123,8 @@ int			ft_0(char *str, char *todo, int start, int prec)
 	tmp2 = ft_strncpy(ft_strnew(start), str, start);
 	tmp3 = ft_strjoin(tmp2, tmp);
 	ft_strdel(&tmp);
-	ft_strdel(&tmp2);
 	tmp = ft_strjoin(tmp3, &str[i]);
-	cases_0(&tmp, opt, start);
+	cases_0(&tmp, opt, start, &tmp2);
 	prec_0(&tmp, prec, start, &tmp3);
 	return (0);
 }
