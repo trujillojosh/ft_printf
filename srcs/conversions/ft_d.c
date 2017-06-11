@@ -50,7 +50,10 @@ int			ft_d(va_list ap, char **s1, char *todo)
 		*s1 = ft_strinsert(*s1, "", 1);
 		return (0);
 	}
-	tmp = ft_itoa_dispatch(digit, todo, 10);
+	if (todo[ft_strlen(todo) - 1] == 'D')
+		tmp = ft_itoa_m((long long)digit);
+	else
+		tmp = ft_itoa_dispatch(digit, todo, 10);
 	*s1 = ft_strinsert(*s1, tmp, 1);
 	ft_strdel(&tmp);
 	return (0);
