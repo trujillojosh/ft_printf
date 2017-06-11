@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:46:56 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 22:46:58 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:36:24 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ static int	ft_zeroprec_d(void *data, char *todo)
 	return (0);
 }
 
-int		ft_d(va_list ap, char **s1, char *todo)
+int			ft_d(va_list ap, char **s1, char *todo)
 {
 	void	*digit;
-	char 	*tmp;
+	char	*tmp;
 
 	digit = va_arg(ap, void *);
 	if (todo[ft_strlen(todo) - 1] == 'i')

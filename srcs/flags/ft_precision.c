@@ -6,16 +6,16 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 17:03:07 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/27 17:03:20 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:41:42 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-int 	find_precision(char *todo)
+int			find_precision(char *todo)
 {
-	int 	i;
-	char 	type;
+	int		i;
+	char	type;
 
 	i = 0;
 	if (ft_strlen(todo) > 0)
@@ -28,7 +28,7 @@ int 	find_precision(char *todo)
 			todo++;
 		if (*todo == type)
 			return (0);
-		i = ft_atoi(todo); //i should represent precision amount
+		i = ft_atoi(todo);
 		if (ft_strchr("sSdDioOuUxX%", (int)type) != NULL)
 			return (i);
 		else
@@ -39,9 +39,9 @@ int 	find_precision(char *todo)
 
 static void	prec_helper(char *str, int start, int prec)
 {
-	char 	*tmp;
-	char 	*tmp2;
-	char 	*tmp3;
+	char	*tmp;
+	char	*tmp2;
+	char	*tmp3;
 
 	if (start > 0)
 	{
@@ -63,22 +63,23 @@ static void	prec_helper(char *str, int start, int prec)
 	ft_strdel(&tmp3);
 }
 
-int		ft_precision(char *str, int start, char *todo, int prec)
+int			ft_precision(char *str, int start, char *todo, int prec)
 {
 	prec -= (int)ft_strlen(&str[start]);
-	if ((prec == -1) && (todo[ft_strlen(todo) - 1] != '%') && (ft_strlen(&str[start]) <= 1))
+	if ((prec == -1) && (todo[ft_strlen(todo) - 1] != '%') &&
+			(ft_strlen(&str[start]) <= 1))
 	{
 		ft_strclr(&str[start]);
 		ft_strinsert(str, "", 3);
 	}
 	if (prec > 0)
 	{
-			if ((str[start] == '+') || (str[start] == '-'))
-			{
-				start++;
-				prec++;
-			}
-			prec_helper(str, start, prec);
+		if ((str[start] == '+') || (str[start] == '-'))
+		{
+			start++;
+			prec++;
+		}
+		prec_helper(str, start, prec);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 23:01:03 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:01:05 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:33:02 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ static int	ft_zeroprec_upx(void *data, char *todo)
 	return (0);
 }
 
-int		ft_up_x(va_list ap, char **s1, char *todo) /* Unsigned hexadecimal integer (uppercase) */ 
+int			ft_up_x(va_list ap, char **s1, char *todo)
 {
 	void	*res;
-	char 	*tmp;
+	char	*tmp;
 
 	res = va_arg(ap, void *);
 	if ((ft_zeroprec_upx(res, todo) == 1) || (ft_zeroprec_upx(res, todo) == -1))

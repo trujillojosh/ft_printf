@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 23:01:10 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:01:12 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:36:04 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int	ft_zeroprec_x(void *data, char *todo)
 	return (0);
 }
 
-int		ft_x(va_list ap, char **s1, char *todo) /* Unsigned hexadecimal integer */ 
+int			ft_x(va_list ap, char **s1, char *todo)
 {
 	void			*res;
-	char 			*tmp;
-	int 			i;
+	char			*tmp;
+	int				i;
 
 	i = 0;
 	res = va_arg(ap, void *);

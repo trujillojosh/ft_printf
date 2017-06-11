@@ -6,21 +6,21 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 23:02:25 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:02:27 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:37:39 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-int 		ft_minus(char *str, char *todo, int start)
+int		ft_minus(char *str, char *todo, int start)
 {
-	int 	i;
-	char 	*tmp;
-	char 	*tmp2;
-	char 	*tmp3;
+	int		i;
+	char	*tmp;
+	char	*tmp2;
+	char	*tmp3;
 
 	if (ft_char_count(todo, '-') > 0)
-	{	
+	{
 		i = start;
 		while (str[i] == ' ')
 			i++;

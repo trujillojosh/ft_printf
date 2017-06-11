@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:47:05 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 22:47:07 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:36:36 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_zeroprec_o(void *data, char *todo)
 	return (0);
 }
 
-int		ft_o(va_list ap, char **s1, char *todo) /* Type octal Integer */ 
+int			ft_o(va_list ap, char **s1, char *todo)
 {
 	void			*res;
 	char			*tmp;

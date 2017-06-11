@@ -6,15 +6,15 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:47:24 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 22:47:26 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:35:28 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-int		ft_percent(char **s1) /* No argument expected */ 
+int		ft_percent(char **s1)
 {
-	char 	s2[2];
+	char	s2[2];
 
 	s2[0] = '%';
 	s2[1] = '\0';

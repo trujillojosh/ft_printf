@@ -6,16 +6,16 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:47:30 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 22:47:32 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:23:36 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-int		ft_s(va_list ap, char **s1, int prec) /* type string */ 
+int		ft_s(va_list ap, char **s1, int prec)
 {
 	char	*var;
-	char 	*tmp;
+	char	*tmp;
 
 	var = va_arg(ap, char *);
 	if (!var)

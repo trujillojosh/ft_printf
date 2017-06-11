@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 17:44:26 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/06/09 16:51:48 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:21:56 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	type_check(char *type)
 {
-	char 	*tmp;
+	char	*tmp;
 	int		i;
 
 	i = 0;
@@ -103,9 +103,6 @@ static int	ft_flags(va_list ap, char **todo, char **str)
 		ft_s(ap, str, prec);
 	else if ((k = ft_dispatch(ap, todo, str)) < 0)
 		return (k);
-		// k = ft_dispatch(ap, todo, str);
-	// if (k < 0)
-	// 	return (k);
 	if ((prec >= 0) && ((*todo)[ft_strlen(*todo) - 1] != 's'))
 		ft_precision(ft_strinsert("", "", 2), i, *todo, prec);
 	ft_width(ft_strinsert("", "", 2), *todo, i, k);

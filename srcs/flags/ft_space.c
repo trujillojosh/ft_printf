@@ -6,15 +6,15 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 23:02:39 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/04/12 23:02:42 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/06/10 17:39:07 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static int ft_svalid(char *str)
+static int	ft_svalid(char *str)
 {
-	char 	c; 
+	char	c;
 
 	c = ft_tolower(str[ft_strlen(str) - 1]);
 	if (ft_char_count(str, '+') > 0)
@@ -26,9 +26,9 @@ static int ft_svalid(char *str)
 		return (0);
 }
 
-int		ft_space(char *str, char *todo, int start) /* if no sign is going to be written, a blank space is inserted before the value */
+int			ft_space(char *str, char *todo, int start)
 {
-	int 	i;
+	int		i;
 	char	*tmp;
 	char	*tmp2;
 	char	*tmp3;
